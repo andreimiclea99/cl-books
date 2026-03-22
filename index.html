@@ -9,14 +9,14 @@
 
     body {
       font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: #0f1923;
-      color: #e0e6ed;
+      background: #ffffff;
+      color: #1a1a2e;
       min-height: 100vh;
     }
 
     header {
-      background: linear-gradient(135deg, #1a2a3a 0%, #0f1923 100%);
-      border-bottom: 1px solid #1e3a5f;
+      background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+      border-bottom: 1px solid #e0e7ef;
       padding: 2rem 1rem;
       text-align: center;
     }
@@ -28,7 +28,7 @@
     }
 
     header p {
-      color: #8899aa;
+      color: #c5d5e8;
       font-size: 1rem;
     }
 
@@ -46,23 +46,24 @@
       min-width: 200px;
       padding: 0.7rem 1rem;
       border-radius: 8px;
-      border: 1px solid #1e3a5f;
-      background: #162736;
-      color: #e0e6ed;
+      border: 1px solid #d0d7e3;
+      background: #f5f7fa;
+      color: #1a1a2e;
       font-size: 0.95rem;
       outline: none;
     }
 
     .controls input:focus {
       border-color: #3b82f6;
+      box-shadow: 0 0 0 2px rgba(59,130,246,0.15);
     }
 
     .controls select {
       padding: 0.7rem 1rem;
       border-radius: 8px;
-      border: 1px solid #1e3a5f;
-      background: #162736;
-      color: #e0e6ed;
+      border: 1px solid #d0d7e3;
+      background: #f5f7fa;
+      color: #1a1a2e;
       font-size: 0.95rem;
       outline: none;
       cursor: pointer;
@@ -72,7 +73,7 @@
       max-width: 900px;
       margin: 0 auto 1rem;
       padding: 0 1rem;
-      color: #6b8299;
+      color: #6b7b8d;
       font-size: 0.85rem;
     }
 
@@ -85,16 +86,17 @@
     .book-card {
       display: flex;
       gap: 1.25rem;
-      background: #162736;
-      border: 1px solid #1e3a5f;
+      background: #f8f9fb;
+      border: 1px solid #e0e7ef;
       border-radius: 12px;
       padding: 1.25rem;
       margin-bottom: 1rem;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
 
     .book-card:hover {
       border-color: #3b82f6;
+      box-shadow: 0 2px 8px rgba(59,130,246,0.1);
     }
 
     .book-cover {
@@ -103,7 +105,7 @@
       height: 120px;
       border-radius: 6px;
       overflow: hidden;
-      background: #1e3a5f;
+      background: #e8edf3;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -127,8 +129,8 @@
 
     .book-episode {
       display: inline-block;
-      background: #1e3a5f;
-      color: #6baaff;
+      background: #e8f0fe;
+      color: #2563eb;
       font-size: 0.75rem;
       font-weight: 600;
       padding: 0.2rem 0.6rem;
@@ -139,7 +141,7 @@
     .book-title {
       font-size: 1.15rem;
       font-weight: 700;
-      color: #fff;
+      color: #1a1a2e;
       margin-bottom: 0.3rem;
       line-height: 1.3;
     }
@@ -149,7 +151,7 @@
       flex-wrap: wrap;
       gap: 0.75rem;
       font-size: 0.82rem;
-      color: #8899aa;
+      color: #5a6a7a;
       margin-bottom: 0.5rem;
       align-items: center;
     }
@@ -162,7 +164,7 @@
 
     .book-description {
       font-size: 0.88rem;
-      color: #99aabb;
+      color: #4a5568;
       line-height: 1.5;
       display: -webkit-box;
       -webkit-line-clamp: 3;
@@ -171,22 +173,22 @@
     }
 
     .episode-header {
-      background: linear-gradient(90deg, #1a2a3a, transparent);
+      background: linear-gradient(90deg, #e8f0fe, transparent);
       border-left: 3px solid #3b82f6;
       padding: 0.75rem 1rem;
       margin: 2rem 0 1rem;
       border-radius: 0 8px 8px 0;
       font-size: 0.95rem;
       font-weight: 600;
-      color: #6baaff;
+      color: #2563eb;
     }
 
     footer {
       text-align: center;
       padding: 2rem;
-      color: #4a6070;
+      color: #6b7b8d;
       font-size: 0.8rem;
-      border-top: 1px solid #1e3a5f;
+      border-top: 1px solid #e0e7ef;
     }
 
     @media (max-width: 600px) {
@@ -202,8 +204,8 @@
   <h1>Biblioteca Comunitatea Liberală</h1>
   <p>Toate cărțile recomandate din episoadele podcastului</p>
   <div style="margin-top: 0.75rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-    <a href="https://comunitatealiberala.ro/" target="_blank" style="color: #6baaff; text-decoration: none; font-size: 0.85rem;">🌐 comunitatealiberala.ro</a>
-    <a href="https://www.youtube.com/watch?v=iiBDLtm5NYU&list=PLK-iGIov18S-mpWBwsuZU7CBWJQN1UaIl" target="_blank" style="color: #6baaff; text-decoration: none; font-size: 0.85rem;">▶ YouTube Playlist</a>
+    <a href="https://comunitatealiberala.ro/" target="_blank" style="color: #c5d5e8; text-decoration: none; font-size: 0.85rem;">🌐 comunitatealiberala.ro</a>
+    <a href="https://www.youtube.com/watch?v=iiBDLtm5NYU&list=PLK-iGIov18S-mpWBwsuZU7CBWJQN1UaIl" target="_blank" style="color: #c5d5e8; text-decoration: none; font-size: 0.85rem;">▶ YouTube Playlist</a>
   </div>
 </header>
 
@@ -219,7 +221,7 @@
 <div class="books-container" id="books"></div>
 
 <footer>
-  Sursa: <a href="https://comunitatealiberala.ro/" target="_blank" style="color: #6baaff;">comunitatealiberala.ro</a> &middot; <a href="https://www.youtube.com/watch?v=iiBDLtm5NYU&list=PLK-iGIov18S-mpWBwsuZU7CBWJQN1UaIl" target="_blank" style="color: #6baaff;">YouTube Playlist</a> &middot; Imagini via Google Books API
+  Sursa: <a href="https://comunitatealiberala.ro/" target="_blank" style="color: #2563eb;">comunitatealiberala.ro</a> &middot; <a href="https://www.youtube.com/watch?v=iiBDLtm5NYU&list=PLK-iGIov18S-mpWBwsuZU7CBWJQN1UaIl" target="_blank" style="color: #2563eb;">YouTube Playlist</a> &middot; Imagini via Google Books API
 </footer>
 
 <script>
