@@ -11,16 +11,16 @@ EXTRACTIONS_DIR = os.path.join(os.path.dirname(__file__), "extractions")
 DOCS_DIR = os.path.join(os.path.dirname(__file__), "..", "docs")
 os.makedirs(DOCS_DIR, exist_ok=True)
 
-# Category colors (vibrant for dark background)
+# Category colors — saturated, high contrast on dark charcoal
 CATEGORY_COLORS = {
-    "Ukraine/Russia": "#ff6b6b",
-    "Romania Politics": "#ffd93d",
-    "USA": "#6bcb77",
-    "European Union": "#4d96ff",
-    "History": "#c084fc",
-    "Economics": "#f97316",
-    "Geopolitics": "#06b6d4",
-    "Others": "#94a3b8",
+    "Ukraine/Russia": "#e84855",
+    "Romania Politics": "#f5a623",
+    "USA": "#44bd6e",
+    "European Union": "#3a86ff",
+    "History": "#b07cd8",
+    "Economics": "#ff7b3a",
+    "Geopolitics": "#17c3b2",
+    "Others": "#8899aa",
 }
 
 # Minimum co-occurrence count to create a concept-concept edge
@@ -159,6 +159,7 @@ def build_graph(extractions: list) -> dict:
             "target": f"cat:{cat}",
             "type": "belongs_to",
             "weight": 1,
+            "color": color,
         })
 
     # --- Concept nodes ---
@@ -176,7 +177,7 @@ def build_graph(extractions: list) -> dict:
         dominant_cat = cat_counts.most_common(1)[0][0] if cat_counts else "Others"
         color = CATEGORY_COLORS.get(dominant_cat, CATEGORY_COLORS["Others"])
 
-        size = 4 + min(len(articles) * 1.5, 16)
+        size = 6 + min(len(articles) * 2.5, 30)
 
         nodes.append({
             "id": node_id,
@@ -192,11 +193,13 @@ def build_graph(extractions: list) -> dict:
         for ext in extractions:
             slug = ext.get("slug", ext.get("_file", "").replace(".json", ""))
             if slug in articles:
+                art_cat = ext.get("category", "Others")
                 edges.append({
                     "source": f"article:{slug}",
                     "target": node_id,
                     "type": "mentions",
                     "weight": 0.5,
+                    "color": CATEGORY_COLORS.get(art_cat, CATEGORY_COLORS["Others"]),
                 })
 
     # --- Concept-concept edges (co-occurrence in same article) ---
@@ -210,6 +213,7 @@ def build_graph(extractions: list) -> dict:
                     "target": f"concept:{c2}",
                     "type": "co_occurs",
                     "weight": len(shared) * 0.3,
+                    "color": "#556677",
                 })
 
     # --- Update category hub sizes based on article count ---
@@ -220,7 +224,7 @@ def build_graph(extractions: list) -> dict:
         if node["type"] == "category":
             cat = node["label"]
             count = cat_counts.get(cat, 0)
-            node["size"] = 20 + count * 2
+            node["size"] = 40 + count * 1.5
             node["articleCount"] = count
 
     # --- Update article node sizes based on degree ---
@@ -234,7 +238,7 @@ def build_graph(extractions: list) -> dict:
     for node in nodes:
         if node["type"] == "article":
             degree = article_degrees.get(node["id"], 1)
-            node["size"] = 5 + min(degree * 0.8, 12)
+            node["size"] = 4 + min(degree * 0.6, 10)
 
     return {
         "nodes": nodes,

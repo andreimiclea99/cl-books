@@ -1,0 +1,16 @@
+# Scraped data (regenerable)
+scraper/articles/
+scraper/extractions/
+
+# Skills (installed via npx, not source code)
+.agents/
+.claude/skills/
+skills-lock.json
+
+# OS
+.DS_Store
+__pycache__/
+*.pyc
+
+# Design context
+.impeccable.md

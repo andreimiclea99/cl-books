@@ -3,27 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Knowledge Graph — Comunitatea Liberală</title>
+  <title>Knowledge Graph — Comunitatea Liberala</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #141419;
+      --bg-surface: #1b1b22;
+      --bg-raised: #22222b;
+      --border: #2a2a35;
+      --border-subtle: #1f1f28;
+      --text: #c8cad0;
+      --text-dim: #6b6e78;
+      --text-bright: #eaedf2;
+      --accent: #3a86ff;
+
+      --cat-ukraine: #e84855;
+      --cat-romania: #f5a623;
+      --cat-usa: #44bd6e;
+      --cat-eu: #3a86ff;
+      --cat-history: #b07cd8;
+      --cat-economics: #ff7b3a;
+      --cat-geopolitics: #17c3b2;
+      --cat-others: #8899aa;
+
+      --font: 'IBM Plex Sans', -apple-system, sans-serif;
+      --mono: 'IBM Plex Mono', monospace;
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: #0a0a0f;
-      color: #e0e0e0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
       overflow: hidden;
       height: 100vh;
     }
 
+    /* ── GRAPH CANVAS ── */
     #graph-container {
       width: 100vw;
       height: 100vh;
       position: absolute;
       top: 0;
       left: 0;
+      background: var(--bg);
     }
 
-    /* Top bar */
+    /* ── TOP BAR ── */
     .top-bar {
       position: fixed;
       top: 0;
@@ -32,363 +60,651 @@
       z-index: 100;
       display: flex;
       align-items: center;
-      gap: 1rem;
-      padding: 0.75rem 1.25rem;
-      background: rgba(10, 10, 15, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      gap: 0.75rem;
+      padding: 0 1rem;
+      height: 44px;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .top-bar .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      flex-shrink: 0;
     }
 
     .top-bar h1 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #fff;
-      white-space: nowrap;
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-bright);
+      letter-spacing: 0.02em;
     }
 
-    .top-bar .subtitle {
-      font-size: 0.75rem;
-      color: #666;
-      white-space: nowrap;
+    .top-bar .divider {
+      color: var(--border);
+      font-size: 0.9rem;
+    }
+
+    .search-wrap {
+      position: relative;
+      flex: 1;
+      max-width: 320px;
+    }
+
+    .search-wrap svg {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      pointer-events: none;
     }
 
     #search {
-      flex: 1;
-      max-width: 360px;
-      padding: 0.5rem 0.85rem;
-      border-radius: 8px;
-      border: 1px solid rgba(255,255,255,0.1);
-      background: rgba(255,255,255,0.05);
-      color: #e0e0e0;
-      font-size: 0.85rem;
+      width: 100%;
+      padding: 0.4rem 0.6rem 0.4rem 2rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 0.78rem;
       outline: none;
-      transition: border-color 0.2s;
+      transition: border-color 0.15s;
     }
 
-    #search:focus {
-      border-color: rgba(100, 150, 255, 0.4);
-    }
+    #search:focus { border-color: var(--accent); }
+    #search::placeholder { color: var(--text-dim); }
 
-    #search::placeholder { color: #555; }
-
-    .stats-badge {
-      font-size: 0.7rem;
-      color: #888;
-      padding: 0.3rem 0.6rem;
-      background: rgba(255,255,255,0.05);
-      border-radius: 6px;
-      white-space: nowrap;
-    }
-
-    /* Legend */
-    .legend {
-      position: fixed;
-      top: 60px;
-      right: 16px;
-      z-index: 90;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-      padding: 0.6rem;
-      background: rgba(10, 10, 15, 0.8);
-      backdrop-filter: blur(8px);
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .legend-item {
+    .top-actions {
       display: flex;
       align-items: center;
-      gap: 6px;
-      padding: 3px 6px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 0.72rem;
-      color: #aaa;
-      transition: background 0.15s;
-      user-select: none;
+      gap: 0.4rem;
+      margin-left: auto;
     }
 
-    .legend-item:hover { background: rgba(255,255,255,0.06); }
-    .legend-item.dimmed { opacity: 0.3; }
+    .top-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text-dim);
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.75rem;
+      transition: color 0.15s, border-color 0.15s;
+    }
 
-    .legend-dot {
-      width: 10px;
-      height: 10px;
+    .top-btn:hover { color: var(--text-bright); border-color: var(--text-dim); }
+    .top-btn.active { color: var(--accent); border-color: var(--accent); }
+
+    .stats-text {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      white-space: nowrap;
+      padding: 0 0.5rem;
+    }
+
+    /* ── LEFT INSIGHT PANEL ── */
+    .insight-panel {
+      position: fixed;
+      top: 44px;
+      left: 0;
+      width: 280px;
+      bottom: 0;
+      z-index: 80;
+      background: var(--bg-surface);
+      border-right: 1px solid var(--border);
+      overflow-y: auto;
+      overflow-x: hidden;
+      transition: transform 0.25s ease;
+    }
+
+    .insight-panel.hidden { transform: translateX(-280px); }
+
+    .insight-section {
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .insight-section h2 {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.6rem;
+    }
+
+    .cat-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+      cursor: pointer;
+      padding: 2px 0;
+      transition: opacity 0.15s;
+    }
+
+    .cat-bar-row:hover { opacity: 0.8; }
+    .cat-bar-row.dimmed { opacity: 0.25; }
+
+    .cat-bar-label {
+      font-size: 0.72rem;
+      color: var(--text);
+      width: 100px;
+      flex-shrink: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cat-bar-track {
+      flex: 1;
+      height: 4px;
+      background: var(--bg);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .cat-bar-fill {
+      height: 100%;
+      border-radius: 2px;
+      transition: width 0.3s ease;
+    }
+
+    .cat-bar-count {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      width: 24px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    /* Top concepts list */
+    .concept-rank {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.25rem 0;
+      cursor: pointer;
+      transition: color 0.15s;
+    }
+
+    .concept-rank:hover { color: var(--text-bright); }
+
+    .concept-rank-num {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--text-dim);
+      width: 16px;
+      flex-shrink: 0;
+    }
+
+    .concept-rank-name {
+      font-size: 0.75rem;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .concept-rank-dot {
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       flex-shrink: 0;
     }
 
-    .legend-count {
-      color: #555;
-      font-size: 0.65rem;
-      margin-left: auto;
-      padding-left: 8px;
+    .concept-rank-count {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--text-dim);
+      flex-shrink: 0;
     }
 
-    /* Side panel */
-    .side-panel {
-      position: fixed;
-      top: 0;
-      right: -420px;
-      width: 400px;
-      max-width: 90vw;
-      height: 100vh;
-      z-index: 200;
-      background: rgba(12, 12, 18, 0.95);
-      backdrop-filter: blur(16px);
-      border-left: 1px solid rgba(255,255,255,0.08);
-      padding: 1.5rem;
-      overflow-y: auto;
-      transition: right 0.3s ease;
-    }
-
-    .side-panel.open { right: 0; }
-
-    .panel-close {
-      position: absolute;
-      top: 0.75rem;
-      right: 0.75rem;
-      width: 28px;
-      height: 28px;
-      border: none;
-      background: rgba(255,255,255,0.06);
-      color: #888;
-      border-radius: 6px;
+    /* Recent articles */
+    .recent-item {
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--border-subtle);
       cursor: pointer;
-      font-size: 1rem;
+      transition: color 0.15s;
+    }
+
+    .recent-item:last-child { border-bottom: none; }
+    .recent-item:hover { color: var(--text-bright); }
+
+    .recent-item-title {
+      font-size: 0.72rem;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .recent-item-meta {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--text-dim);
+      margin-top: 2px;
+    }
+
+    .recent-item-cat {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      margin-right: 4px;
+      vertical-align: middle;
+    }
+
+    /* ── RIGHT DETAIL PANEL ── */
+    .detail-panel {
+      position: fixed;
+      top: 44px;
+      right: -380px;
+      width: 360px;
+      max-width: 90vw;
+      bottom: 0;
+      z-index: 200;
+      background: var(--bg-surface);
+      border-left: 1px solid var(--border);
+      overflow-y: auto;
+      transition: right 0.25s ease;
+    }
+
+    .detail-panel.open { right: 0; }
+
+    .detail-header {
+      padding: 1rem 1rem 0.75rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .detail-close {
+      position: absolute;
+      top: 0.6rem;
+      right: 0.6rem;
+      width: 24px;
+      height: 24px;
+      border: 1px solid var(--border);
+      background: none;
+      color: var(--text-dim);
+      border-radius: 3px;
+      cursor: pointer;
+      font-size: 0.85rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background 0.15s;
     }
 
-    .panel-close:hover { background: rgba(255,255,255,0.12); color: #fff; }
+    .detail-close:hover { color: var(--text-bright); border-color: var(--text-dim); }
 
-    .panel-category {
+    .detail-cat-tag {
       display: inline-block;
-      font-size: 0.7rem;
-      font-weight: 600;
-      padding: 0.2rem 0.6rem;
-      border-radius: 4px;
-      margin-bottom: 0.6rem;
-    }
-
-    .panel-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.3;
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      font-weight: 500;
+      padding: 2px 6px;
+      border-radius: 2px;
       margin-bottom: 0.5rem;
-    }
-
-    .panel-meta {
-      font-size: 0.75rem;
-      color: #666;
-      margin-bottom: 1rem;
-    }
-
-    .panel-section {
-      margin-bottom: 1rem;
-    }
-
-    .panel-section h3 {
-      font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #555;
-      margin-bottom: 0.4rem;
+      letter-spacing: 0.04em;
     }
 
-    .panel-section p {
-      font-size: 0.85rem;
-      color: #bbb;
-      line-height: 1.6;
+    .detail-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-bright);
+      line-height: 1.35;
+      margin-bottom: 0.3rem;
+      padding-right: 2rem;
     }
 
-    .panel-section ul {
+    .detail-meta {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--text-dim);
+    }
+
+    .detail-body {
+      padding: 0.75rem 1rem;
+    }
+
+    .detail-section {
+      margin-bottom: 0.9rem;
+    }
+
+    .detail-section h3 {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+      margin-bottom: 0.35rem;
+    }
+
+    .detail-section p {
+      font-size: 0.8rem;
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .detail-section ul {
       list-style: none;
       padding: 0;
     }
 
-    .panel-section li {
-      font-size: 0.82rem;
-      color: #bbb;
-      padding: 0.25rem 0;
-      padding-left: 1rem;
+    .detail-section li {
+      font-size: 0.78rem;
+      color: var(--text);
+      padding: 0.2rem 0;
+      padding-left: 0.75rem;
       position: relative;
       line-height: 1.4;
     }
 
-    .panel-section li::before {
-      content: "•";
+    .detail-section li::before {
+      content: "";
       position: absolute;
       left: 0;
-      color: #555;
+      top: 0.55rem;
+      width: 3px;
+      height: 3px;
+      background: var(--text-dim);
+      border-radius: 50%;
     }
 
-    .tag {
-      display: inline-block;
+    .detail-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .detail-tag {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      padding: 2px 6px;
+      border: 1px solid var(--border);
+      border-radius: 2px;
+      color: var(--text-dim);
+    }
+
+    .detail-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.5rem;
+      padding: 0.4rem 0.75rem;
+      font-family: var(--mono);
       font-size: 0.7rem;
-      padding: 0.15rem 0.5rem;
-      border-radius: 4px;
-      margin: 2px;
-      background: rgba(255,255,255,0.06);
-      color: #999;
-    }
-
-    .panel-link {
-      display: inline-block;
-      margin-top: 0.75rem;
-      padding: 0.5rem 1rem;
-      background: rgba(75, 130, 255, 0.15);
-      color: #6b9fff;
-      border-radius: 6px;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 3px;
       text-decoration: none;
-      font-size: 0.82rem;
       transition: background 0.15s;
     }
 
-    .panel-link:hover { background: rgba(75, 130, 255, 0.25); }
+    .detail-link:hover { background: rgba(58, 134, 255, 0.1); }
 
-    /* Concept panel */
-    .concept-articles {
-      list-style: none;
-      padding: 0;
+    /* Concept detail */
+    .detail-article-list { list-style: none; padding: 0; }
+
+    .detail-article-list li {
+      padding: 0.35rem 0;
+      border-bottom: 1px solid var(--border-subtle);
     }
 
-    .concept-articles li {
-      padding: 0.4rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-    }
+    .detail-article-list li::before { display: none; }
 
-    .concept-articles li a {
-      color: #8ab4f8;
+    .detail-article-list a {
+      font-size: 0.75rem;
+      color: var(--text);
       text-decoration: none;
-      font-size: 0.82rem;
+      line-height: 1.35;
     }
 
-    .concept-articles li a:hover { text-decoration: underline; }
+    .detail-article-list a:hover { color: var(--text-bright); }
 
-    /* Loading */
-    .loading {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      z-index: 300;
+    .detail-article-list .art-date {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--text-dim);
     }
 
-    .loading-spinner {
-      width: 36px;
-      height: 36px;
-      border: 3px solid rgba(255,255,255,0.1);
-      border-top-color: #4d96ff;
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-      margin: 0 auto 1rem;
-    }
-
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    .loading p { color: #555; font-size: 0.85rem; }
-
-    /* Tooltip */
+    /* ── TOOLTIP ── */
     .tooltip {
       position: fixed;
       z-index: 150;
-      padding: 0.4rem 0.7rem;
-      background: rgba(20, 20, 30, 0.95);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 6px;
-      font-size: 0.75rem;
-      color: #ddd;
+      padding: 4px 8px;
+      background: var(--bg-raised);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      font-size: 0.7rem;
+      color: var(--text);
       pointer-events: none;
       opacity: 0;
-      transition: opacity 0.15s;
-      max-width: 280px;
+      transition: opacity 0.1s;
+      max-width: 300px;
+      line-height: 1.35;
     }
 
     .tooltip.visible { opacity: 1; }
 
-    @media (max-width: 600px) {
-      .top-bar { padding: 0.5rem 0.75rem; gap: 0.5rem; }
-      .top-bar h1 { font-size: 0.8rem; }
-      .top-bar .subtitle { display: none; }
-      .legend { top: 52px; right: 8px; }
-      .side-panel { width: 100vw; max-width: 100vw; }
+    .tooltip-type {
+      font-family: var(--mono);
+      font-size: 0.58rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .tooltip-label {
+      font-weight: 500;
+      color: var(--text-bright);
+    }
+
+    .tooltip-sub {
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      margin-top: 2px;
+    }
+
+    /* ── LOADING ── */
+    .loading-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      transition: opacity 0.4s;
+    }
+
+    .loading-overlay.done { opacity: 0; pointer-events: none; }
+
+    .loading-bar {
+      width: 160px;
+      height: 2px;
+      background: var(--border);
+      border-radius: 1px;
+      overflow: hidden;
+    }
+
+    .loading-bar-fill {
+      width: 0%;
+      height: 100%;
+      background: var(--accent);
+      transition: width 0.3s;
+    }
+
+    .loading-text {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--text-dim);
+    }
+
+    /* ── ONBOARDING HINT ── */
+    .hint {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 90;
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--text-dim);
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 3px;
+      opacity: 1;
+      transition: opacity 0.5s;
+      pointer-events: none;
+    }
+
+    .hint.hidden { opacity: 0; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .insight-panel { width: 240px; }
+      .insight-panel.hidden { transform: translateX(-240px); }
+      .detail-panel { width: 100vw; max-width: 100vw; }
+      .stats-text { display: none; }
+    }
+
+    @media (max-width: 500px) {
+      .insight-panel { display: none; }
+      .top-bar .brand { display: none; }
     }
   </style>
 </head>
 <body>
 
+<!-- TOP BAR -->
 <div class="top-bar">
-  <h1>Knowledge Graph</h1>
-  <span class="subtitle">Comunitatea Liberală</span>
-  <input type="text" id="search" placeholder="Search articles, concepts, people...">
-  <span class="stats-badge" id="stats"></span>
+  <div class="brand">
+    <h1>Knowledge Graph</h1>
+    <span class="divider">/</span>
+    <h1 style="color:var(--text-dim);font-weight:400">Comunitatea Liberala</h1>
+  </div>
+
+  <div class="search-wrap">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input type="text" id="search" placeholder="Search articles, concepts, people...">
+  </div>
+
+  <span class="stats-text" id="stats"></span>
+
+  <div class="top-actions">
+    <button class="top-btn" id="toggleInsight" title="Toggle insight panel">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="18" rx="1"/><line x1="14" y1="6" x2="21" y2="6"/><line x1="14" y1="12" x2="21" y2="12"/><line x1="14" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <button class="top-btn" id="resetView" title="Reset view">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9"/><polyline points="3 3 3 12 12 12"/></svg>
+    </button>
+  </div>
 </div>
 
-<div class="legend" id="legend"></div>
+<!-- LEFT INSIGHT PANEL -->
+<div class="insight-panel" id="insightPanel">
+  <div class="insight-section" id="catSection">
+    <h2>Categories</h2>
+    <div id="catBars"></div>
+  </div>
+  <div class="insight-section" id="conceptSection">
+    <h2>Top Concepts</h2>
+    <div id="conceptRanks"></div>
+  </div>
+  <div class="insight-section" id="recentSection">
+    <h2>Recent Articles</h2>
+    <div id="recentList"></div>
+  </div>
+</div>
 
+<!-- GRAPH CANVAS -->
 <div id="graph-container"></div>
 
-<div class="side-panel" id="sidePanel">
-  <button class="panel-close" id="panelClose">&times;</button>
-  <div id="panelContent"></div>
+<!-- RIGHT DETAIL PANEL -->
+<div class="detail-panel" id="detailPanel">
+  <div class="detail-header" id="detailHeader"></div>
+  <div class="detail-body" id="detailBody"></div>
 </div>
 
+<!-- TOOLTIP -->
 <div class="tooltip" id="tooltip"></div>
 
-<div class="loading" id="loading">
-  <div class="loading-spinner"></div>
-  <p>Loading knowledge graph...</p>
+<!-- LOADING -->
+<div class="loading-overlay" id="loading">
+  <div class="loading-bar"><div class="loading-bar-fill" id="loadingFill"></div></div>
+  <div class="loading-text" id="loadingText">Loading graph data...</div>
 </div>
 
+<!-- ONBOARDING HINT -->
+<div class="hint" id="hint">Click a node to inspect &middot; Scroll to zoom &middot; Drag to pan &middot; Esc to reset</div>
+
+<!-- LIBS -->
 <script src="https://cdn.jsdelivr.net/npm/graphology@0.25.4/dist/graphology.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/graphology-layout-forceatlas2/build/graphology-layout-forceatlas2.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sigma@2.4.0/build/sigma.min.js"></script>
 
 <script>
 (async function() {
-  const loadingEl = document.getElementById('loading');
-  const container = document.getElementById('graph-container');
-  const searchInput = document.getElementById('search');
-  const statsEl = document.getElementById('stats');
-  const legendEl = document.getElementById('legend');
-  const sidePanel = document.getElementById('sidePanel');
-  const panelContent = document.getElementById('panelContent');
-  const panelClose = document.getElementById('panelClose');
-  const tooltipEl = document.getElementById('tooltip');
+  const $ = id => document.getElementById(id);
+  const loadingEl = $('loading');
+  const loadingFill = $('loadingFill');
+  const loadingText = $('loadingText');
+  const container = $('graph-container');
+  const searchInput = $('search');
+  const statsEl = $('stats');
+  const insightPanel = $('insightPanel');
+  const detailPanel = $('detailPanel');
+  const detailHeader = $('detailHeader');
+  const detailBody = $('detailBody');
+  const tooltipEl = $('tooltip');
+  const hintEl = $('hint');
 
-  // Load data
+  // ── Load data ──
+  loadingFill.style.width = '20%';
   let graphData;
   try {
     const resp = await fetch('graph.json');
     graphData = await resp.json();
   } catch(e) {
-    loadingEl.innerHTML = '<p style="color:#ff6b6b">Failed to load graph data</p>';
+    loadingText.textContent = 'Failed to load graph data';
+    loadingFill.style.background = '#e84855';
     return;
   }
+  loadingFill.style.width = '50%';
+  loadingText.textContent = 'Building graph layout...';
 
-  // Build graphology graph
+  const meta = graphData.metadata;
+  const catColors = meta.categoryColors;
+
+  // ── Build graphology graph ──
   const graph = new graphology.Graph();
 
-  // Add nodes with initial random positions
-  const angleStep = (2 * Math.PI) / graphData.nodes.length;
   graphData.nodes.forEach((node, i) => {
-    let x, y;
+    let x = (Math.random() - 0.5) * 400;
+    let y = (Math.random() - 0.5) * 400;
+
     if (node.type === 'category') {
-      // Place categories in a circle
-      const catIdx = graphData.metadata.categories.indexOf(node.label);
-      const angle = (catIdx / graphData.metadata.categories.length) * 2 * Math.PI;
-      x = Math.cos(angle) * 200;
-      y = Math.sin(angle) * 200;
-    } else {
-      // Random placement near their category
-      x = (Math.random() - 0.5) * 500;
-      y = (Math.random() - 0.5) * 500;
+      const catIdx = meta.categories.indexOf(node.label);
+      const angle = (catIdx / meta.categories.length) * 2 * Math.PI;
+      x = Math.cos(angle) * 180;
+      y = Math.sin(angle) * 180;
     }
 
     graph.addNode(node.id, {
@@ -396,159 +712,217 @@
       size: node.size,
       color: node.color,
       label: node.label,
-      type: node.type === 'category' ? 'circle' : 'circle',
-      // Store all metadata
       _type: node.type,
       _data: node,
     });
   });
 
-  // Add edges
-  graphData.edges.forEach((edge, i) => {
-    if (graph.hasNode(edge.source) && graph.hasNode(edge.target)) {
-      try {
-        graph.addEdge(edge.source, edge.target, {
-          size: Math.max(0.3, (edge.weight || 0.5) * 0.8),
-          color: 'rgba(255,255,255,0.04)',
-          _type: edge.type,
-        });
-      } catch(e) {
-        // Skip duplicate edges
-      }
-    }
+  graphData.edges.forEach((edge) => {
+    if (!graph.hasNode(edge.source) || !graph.hasNode(edge.target)) return;
+    try {
+      graph.addEdge(edge.source, edge.target, {
+        size: Math.max(0.4, (edge.weight || 0.5) * 0.7),
+        color: edge.color ? (edge.color + '40') : 'rgba(100,110,130,0.15)',
+        _type: edge.type,
+        _baseColor: edge.color || '#556677',
+      });
+    } catch(e) { /* skip duplicates */ }
   });
 
-  // Run ForceAtlas2 layout
-  const fa2Settings = {
-    gravity: 0.05,
-    scalingRatio: 8,
-    barnesHutOptimize: true,
-    barnesHutTheta: 0.6,
-    slowDown: 3,
-    strongGravityMode: false,
-    adjustSizes: true,
-  };
+  loadingFill.style.width = '70%';
 
-  // Run layout synchronously for a set number of iterations
+  // ── Layout ──
   const sensibleSettings = forceAtlas2.inferSettings(graph);
-  const settings = { ...sensibleSettings, ...fa2Settings };
-
   forceAtlas2.assign(graph, {
     iterations: 600,
-    settings: settings,
+    settings: {
+      ...sensibleSettings,
+      gravity: 0.08,
+      scalingRatio: 10,
+      barnesHutOptimize: true,
+      barnesHutTheta: 0.5,
+      slowDown: 3,
+      strongGravityMode: false,
+      adjustSizes: true,
+    },
   });
 
-  // Create Sigma renderer
+  loadingFill.style.width = '90%';
+  loadingText.textContent = 'Rendering...';
+
+  // ── Sigma renderer ──
   const renderer = new Sigma(graph, container, {
     renderLabels: true,
-    labelSize: 11,
-    labelColor: { color: '#888' },
-    labelRenderedSizeThreshold: 8,
-    defaultEdgeColor: 'rgba(255,255,255,0.04)',
+    labelSize: 12,
+    labelColor: { color: '#a0a5b0' },
+    labelRenderedSizeThreshold: 6,
+    defaultEdgeColor: 'rgba(100,110,130,0.15)',
     defaultNodeColor: '#555',
-    nodeReducer: null,
-    edgeReducer: null,
-    minCameraRatio: 0.04,
-    maxCameraRatio: 8,
-    labelFont: '"Inter", "Segoe UI", system-ui, sans-serif',
-    stagePadding: 40,
+    minCameraRatio: 0.03,
+    maxCameraRatio: 10,
+    labelFont: '"IBM Plex Sans", sans-serif',
+    stagePadding: 60,
+    labelDensity: 0.12,
+    labelGridCellSize: 120,
   });
 
-  loadingEl.style.display = 'none';
+  loadingFill.style.width = '100%';
+  setTimeout(() => loadingEl.classList.add('done'), 300);
 
-  // Stats
-  const meta = graphData.metadata;
-  statsEl.textContent = `${meta.totalArticles} articles · ${meta.totalConcepts} concepts · ${meta.totalEdges} connections`;
+  // Fade hint after 6s or first interaction
+  setTimeout(() => hintEl.classList.add('hidden'), 6000);
+  container.addEventListener('mousedown', () => hintEl.classList.add('hidden'), { once: true });
 
-  // Legend
-  const hiddenCategories = new Set();
+  // ── Stats ──
+  statsEl.textContent = `${meta.totalArticles} articles / ${meta.totalConcepts} concepts / ${meta.totalEdges} edges`;
 
-  Object.entries(meta.categoryColors).forEach(([cat, color]) => {
-    const count = graphData.nodes.filter(n => n.type === 'article' && n.category === cat).length;
-    const item = document.createElement('div');
-    item.className = 'legend-item';
-    item.innerHTML = `<span class="legend-dot" style="background:${color}"></span>${cat}<span class="legend-count">${count}</span>`;
-
-    item.addEventListener('click', () => {
-      if (hiddenCategories.has(cat)) {
-        hiddenCategories.delete(cat);
-        item.classList.remove('dimmed');
-      } else {
-        hiddenCategories.add(cat);
-        item.classList.add('dimmed');
-      }
-      applyFilters();
-    });
-
-    legendEl.appendChild(item);
-  });
-
-  // State
+  // ── State ──
   let hoveredNode = null;
   let selectedNode = null;
   let searchQuery = '';
+  const hiddenCategories = new Set();
 
   function getNeighbors(nodeId) {
-    const neighbors = new Set();
-    neighbors.add(nodeId);
-    graph.forEachNeighbor(nodeId, (neighbor) => neighbors.add(neighbor));
-    return neighbors;
+    const set = new Set([nodeId]);
+    graph.forEachNeighbor(nodeId, n => set.add(n));
+    return set;
   }
 
+  // ── Insight Panel: Categories ──
+  const catBarsEl = $('catBars');
+  const maxCount = Math.max(...Object.values(meta.categoryColors).map((_, i) => {
+    const cat = meta.categories[i];
+    return graphData.nodes.filter(n => n.type === 'article' && n.category === cat).length;
+  }));
+
+  meta.categories.forEach(cat => {
+    const count = graphData.nodes.filter(n => n.type === 'article' && n.category === cat).length;
+    if (count === 0) return;
+    const color = catColors[cat];
+    const pct = (count / maxCount * 100).toFixed(0);
+
+    const row = document.createElement('div');
+    row.className = 'cat-bar-row';
+    row.innerHTML = `
+      <span class="cat-bar-label">${cat}</span>
+      <div class="cat-bar-track"><div class="cat-bar-fill" style="width:${pct}%;background:${color}"></div></div>
+      <span class="cat-bar-count">${count}</span>
+    `;
+    row.addEventListener('click', () => {
+      if (hiddenCategories.has(cat)) {
+        hiddenCategories.delete(cat);
+        row.classList.remove('dimmed');
+      } else {
+        hiddenCategories.add(cat);
+        row.classList.add('dimmed');
+      }
+      applyFilters();
+    });
+    catBarsEl.appendChild(row);
+  });
+
+  // ── Insight Panel: Top Concepts ──
+  const conceptRanksEl = $('conceptRanks');
+  const conceptNodes = graphData.nodes
+    .filter(n => n.type === 'concept')
+    .sort((a, b) => (b.mentions || 0) - (a.mentions || 0))
+    .slice(0, 10);
+
+  conceptNodes.forEach((cn, i) => {
+    const row = document.createElement('div');
+    row.className = 'concept-rank';
+    row.innerHTML = `
+      <span class="concept-rank-num">${i + 1}</span>
+      <span class="concept-rank-dot" style="background:${cn.color}"></span>
+      <span class="concept-rank-name">${cn.label}</span>
+      <span class="concept-rank-count">${cn.mentions || 0}</span>
+    `;
+    row.addEventListener('click', () => {
+      const nodeId = cn.id;
+      if (graph.hasNode(nodeId)) {
+        selectedNode = nodeId;
+        showDetail(nodeId);
+        applyFilters();
+        const pos = graph.getNodeAttributes(nodeId);
+        renderer.getCamera().animate({ x: pos.x, y: pos.y, ratio: 0.4 }, { duration: 400 });
+      }
+    });
+    conceptRanksEl.appendChild(row);
+  });
+
+  // ── Insight Panel: Recent Articles ──
+  const recentEl = $('recentList');
+  const recentArticles = graphData.nodes
+    .filter(n => n.type === 'article')
+    .sort((a, b) => (b.date || '').localeCompare(a.date || ''))
+    .slice(0, 8);
+
+  recentArticles.forEach(art => {
+    const item = document.createElement('div');
+    item.className = 'recent-item';
+    item.innerHTML = `
+      <div class="recent-item-title"><span class="recent-item-cat" style="background:${art.color}"></span>${art.label}</div>
+      <div class="recent-item-meta">${art.author || ''} &middot; ${art.date || ''}</div>
+    `;
+    item.addEventListener('click', () => {
+      const nodeId = art.id;
+      if (graph.hasNode(nodeId)) {
+        selectedNode = nodeId;
+        showDetail(nodeId);
+        applyFilters();
+        const pos = graph.getNodeAttributes(nodeId);
+        renderer.getCamera().animate({ x: pos.x, y: pos.y, ratio: 0.35 }, { duration: 400 });
+      }
+    });
+    recentEl.appendChild(item);
+  });
+
+  // ── Filters & Rendering ──
   function applyFilters() {
     const highlight = selectedNode ? getNeighbors(selectedNode) : null;
 
     renderer.setSetting('nodeReducer', (node, data) => {
-      const nodeData = graph.getNodeAttributes(node);
-      const nodeType = nodeData._type;
-      const nodeMeta = nodeData._data;
+      const attrs = graph.getNodeAttributes(node);
+      const nType = attrs._type;
+      const nData = attrs._data;
 
       // Category filter
-      if (nodeType === 'article' && hiddenCategories.has(nodeMeta.category)) {
-        return { ...data, hidden: true };
-      }
-      if (nodeType === 'category' && hiddenCategories.has(nodeMeta.label)) {
-        return { ...data, hidden: true };
-      }
+      if (nType === 'article' && hiddenCategories.has(nData.category)) return { ...data, hidden: true };
+      if (nType === 'category' && hiddenCategories.has(nData.label)) return { ...data, hidden: true };
 
-      // Search filter
+      // Search
       if (searchQuery) {
         const label = (data.label || '').toLowerCase();
-        const matchesSearch = label.includes(searchQuery);
-        // Also check people/countries for articles
-        let metaMatch = false;
-        if (nodeMeta && nodeType === 'article') {
-          metaMatch = (nodeMeta.people || []).some(p => p.toLowerCase().includes(searchQuery))
-            || (nodeMeta.countries || []).some(c => c.toLowerCase().includes(searchQuery))
-            || (nodeMeta.summary || '').toLowerCase().includes(searchQuery);
+        let matches = label.includes(searchQuery);
+        if (!matches && nType === 'article') {
+          matches = (nData.people || []).some(p => p.toLowerCase().includes(searchQuery))
+            || (nData.countries || []).some(c => c.toLowerCase().includes(searchQuery))
+            || (nData.summary || '').toLowerCase().includes(searchQuery);
         }
-        if (!matchesSearch && !metaMatch) {
-          if (highlight && highlight.has(node)) {
-            // Still show if it's a neighbor of selected
-          } else {
-            return { ...data, color: '#1a1a22', label: '', size: data.size * 0.4 };
-          }
+        if (!matches && !(highlight && highlight.has(node))) {
+          return { ...data, color: '#1e1e26', label: '', size: data.size * 0.3 };
         }
       }
 
-      // Selection highlight
+      // Selection
       if (highlight) {
         if (!highlight.has(node)) {
-          return { ...data, color: '#1a1a22', label: '', size: data.size * 0.5 };
+          return { ...data, color: '#1e1e26', label: '', size: data.size * 0.4 };
         }
         if (node === selectedNode) {
-          return { ...data, size: data.size * 1.5, zIndex: 10 };
+          return { ...data, size: data.size * 1.4, zIndex: 10 };
         }
+        return data;
       }
 
-      // Hover highlight
+      // Hover
       if (hoveredNode) {
-        const hoverNeighbors = getNeighbors(hoveredNode);
-        if (!hoverNeighbors.has(node)) {
-          return { ...data, color: data.color + '33', label: '' };
+        const hNeighbors = getNeighbors(hoveredNode);
+        if (!hNeighbors.has(node)) {
+          return { ...data, color: data.color.length === 7 ? data.color + '30' : data.color, label: '' };
         }
         if (node === hoveredNode) {
-          return { ...data, size: data.size * 1.3 };
+          return { ...data, size: data.size * 1.2 };
         }
       }
 
@@ -557,24 +931,21 @@
 
     renderer.setSetting('edgeReducer', (edge, data) => {
       const [source, target] = graph.extremities(edge);
-
-      // Hide edges for hidden categories
-      const sourceData = graph.getNodeAttributes(source)._data;
-      const targetData = graph.getNodeAttributes(target)._data;
+      const baseColor = graph.getEdgeAttribute(edge, '_baseColor') || '#556677';
 
       if (highlight) {
-        if (!highlight.has(source) || !highlight.has(target)) {
-          return { ...data, hidden: true };
+        if (highlight.has(source) && highlight.has(target)) {
+          return { ...data, color: baseColor + 'AA', size: Math.max(data.size, 1.2) };
         }
-        return { ...data, color: 'rgba(255,255,255,0.15)', size: data.size * 1.5 };
+        return { ...data, hidden: true };
       }
 
       if (hoveredNode) {
-        const hoverNeighbors = getNeighbors(hoveredNode);
-        if (hoverNeighbors.has(source) && hoverNeighbors.has(target)) {
-          return { ...data, color: 'rgba(255,255,255,0.2)', size: data.size * 1.5 };
+        const hNeighbors = getNeighbors(hoveredNode);
+        if (hNeighbors.has(source) && hNeighbors.has(target)) {
+          return { ...data, color: baseColor + 'CC', size: Math.max(data.size, 1.5) };
         }
-        return { ...data, color: 'rgba(255,255,255,0.01)' };
+        return { ...data, color: 'rgba(40,42,50,0.15)' };
       }
 
       return data;
@@ -583,15 +954,11 @@
     renderer.refresh();
   }
 
-  // Hover
+  // ── Hover ──
   renderer.on('enterNode', ({ node }) => {
     hoveredNode = node;
     container.style.cursor = 'pointer';
-
-    const attrs = graph.getNodeAttributes(node);
-    tooltipEl.textContent = attrs.label;
-    tooltipEl.classList.add('visible');
-
+    showTooltip(node);
     if (!selectedNode) applyFilters();
   });
 
@@ -602,126 +969,144 @@
     if (!selectedNode) applyFilters();
   });
 
-  // Mouse move for tooltip
   container.addEventListener('mousemove', (e) => {
-    tooltipEl.style.left = (e.clientX + 12) + 'px';
-    tooltipEl.style.top = (e.clientY + 12) + 'px';
+    tooltipEl.style.left = (e.clientX + 14) + 'px';
+    tooltipEl.style.top = (e.clientY + 14) + 'px';
   });
 
-  // Click
+  function showTooltip(nodeId) {
+    const attrs = graph.getNodeAttributes(nodeId);
+    const d = attrs._data;
+    let typeLabel = attrs._type;
+    let sub = '';
+
+    if (attrs._type === 'article') {
+      sub = (d.author || '') + (d.date ? ' &middot; ' + d.date : '');
+    } else if (attrs._type === 'concept') {
+      sub = (d.mentions || 0) + ' articles';
+    } else if (attrs._type === 'category') {
+      sub = (d.articleCount || 0) + ' articles';
+    }
+
+    tooltipEl.innerHTML = `
+      <div class="tooltip-type">${typeLabel}</div>
+      <div class="tooltip-label">${attrs.label}</div>
+      ${sub ? '<div class="tooltip-sub">' + sub + '</div>' : ''}
+    `;
+    tooltipEl.classList.add('visible');
+  }
+
+  // ── Click ──
   renderer.on('clickNode', ({ node }) => {
     selectedNode = node;
-    showPanel(node);
+    showDetail(node);
     applyFilters();
   });
 
   renderer.on('clickStage', () => {
     if (selectedNode) {
       selectedNode = null;
-      sidePanel.classList.remove('open');
+      detailPanel.classList.remove('open');
       applyFilters();
     }
   });
 
-  panelClose.addEventListener('click', () => {
-    selectedNode = null;
-    sidePanel.classList.remove('open');
-    applyFilters();
-  });
-
-  // Side panel
-  function showPanel(nodeId) {
+  // ── Detail Panel ──
+  function showDetail(nodeId) {
     const attrs = graph.getNodeAttributes(nodeId);
-    const data = attrs._data;
+    const d = attrs._data;
     const type = attrs._type;
 
-    let html = '';
+    let headerHTML = '';
+    let bodyHTML = '';
 
     if (type === 'article') {
-      const catColor = meta.categoryColors[data.category] || '#888';
-      html = `
-        <div class="panel-category" style="background:${catColor}22;color:${catColor}">${data.category}</div>
-        <div class="panel-title">${data.label}</div>
-        <div class="panel-meta">${data.author || ''} · ${data.date || ''}</div>
-        <div class="panel-section">
-          <h3>Summary</h3>
-          <p>${data.summary || ''}</p>
-        </div>
-        ${data.talking_points && data.talking_points.length ? `
-        <div class="panel-section">
-          <h3>Key Points</h3>
-          <ul>${data.talking_points.map(tp => `<li>${tp}</li>`).join('')}</ul>
-        </div>` : ''}
-        ${data.people && data.people.length ? `
-        <div class="panel-section">
-          <h3>People</h3>
-          <div>${data.people.map(p => `<span class="tag">${p}</span>`).join('')}</div>
-        </div>` : ''}
-        ${data.countries && data.countries.length ? `
-        <div class="panel-section">
-          <h3>Countries</h3>
-          <div>${data.countries.map(c => `<span class="tag">${c}</span>`).join('')}</div>
-        </div>` : ''}
-        ${data.url ? `<a class="panel-link" href="${data.url}" target="_blank">Read article &rarr;</a>` : ''}
+      const catColor = catColors[d.category] || '#888';
+      headerHTML = `
+        <button class="detail-close" id="detailClose">&times;</button>
+        <div class="detail-cat-tag" style="background:${catColor}20;color:${catColor}">${d.category}</div>
+        <div class="detail-title">${d.label}</div>
+        <div class="detail-meta">${d.author || 'Unknown'} &middot; ${d.date || ''}</div>
+      `;
+      bodyHTML = `
+        ${d.summary ? `<div class="detail-section"><h3>Summary</h3><p>${d.summary}</p></div>` : ''}
+        ${d.talking_points?.length ? `<div class="detail-section"><h3>Key Points</h3><ul>${d.talking_points.map(t => `<li>${t}</li>`).join('')}</ul></div>` : ''}
+        ${d.people?.length ? `<div class="detail-section"><h3>People</h3><div class="detail-tags">${d.people.map(p => `<span class="detail-tag">${p}</span>`).join('')}</div></div>` : ''}
+        ${d.countries?.length ? `<div class="detail-section"><h3>Countries</h3><div class="detail-tags">${d.countries.map(c => `<span class="detail-tag">${c}</span>`).join('')}</div></div>` : ''}
+        ${d.url ? `<a class="detail-link" href="${d.url}" target="_blank">Read article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>` : ''}
       `;
     } else if (type === 'concept') {
-      // Find articles mentioning this concept
       const neighbors = [];
-      graph.forEachNeighbor(nodeId, (neighbor) => {
-        const nAttrs = graph.getNodeAttributes(neighbor);
-        if (nAttrs._type === 'article') {
-          neighbors.push(nAttrs._data);
-        }
+      graph.forEachNeighbor(nodeId, n => {
+        const na = graph.getNodeAttributes(n);
+        if (na._type === 'article') neighbors.push(na._data);
       });
 
-      html = `
-        <div class="panel-title">${data.label}</div>
-        <div class="panel-meta">Concept · mentioned in ${data.mentions || neighbors.length} articles</div>
-        <div class="panel-section">
-          <h3>Articles</h3>
-          <ul class="concept-articles">
-            ${neighbors.map(a => `<li><a href="${a.url}" target="_blank">${a.label || a.title}</a><br><span style="color:#555;font-size:0.7rem">${a.date || ''}</span></li>`).join('')}
+      headerHTML = `
+        <button class="detail-close" id="detailClose">&times;</button>
+        <div class="detail-cat-tag" style="background:${d.color}20;color:${d.color}">Concept</div>
+        <div class="detail-title">${d.label}</div>
+        <div class="detail-meta">${d.mentions || neighbors.length} articles</div>
+      `;
+      bodyHTML = `
+        <div class="detail-section">
+          <h3>Articles mentioning this concept</h3>
+          <ul class="detail-article-list">
+            ${neighbors.sort((a,b) => (b.date||'').localeCompare(a.date||'')).map(a =>
+              `<li><a href="${a.url}" target="_blank">${a.label || a.title}</a><br><span class="art-date">${a.date || ''} &middot; ${a.category || ''}</span></li>`
+            ).join('')}
           </ul>
         </div>
       `;
     } else if (type === 'category') {
       const articles = [];
-      graph.forEachNeighbor(nodeId, (neighbor) => {
-        const nAttrs = graph.getNodeAttributes(neighbor);
-        if (nAttrs._type === 'article') {
-          articles.push(nAttrs._data);
-        }
+      graph.forEachNeighbor(nodeId, n => {
+        const na = graph.getNodeAttributes(n);
+        if (na._type === 'article') articles.push(na._data);
       });
 
-      html = `
-        <div class="panel-category" style="background:${data.color}22;color:${data.color}">${data.label}</div>
-        <div class="panel-title">${data.label}</div>
-        <div class="panel-meta">${articles.length} articles</div>
-        <div class="panel-section">
-          <h3>Articles</h3>
-          <ul class="concept-articles">
-            ${articles.map(a => `<li><a href="${a.url}" target="_blank">${a.label || a.title}</a><br><span style="color:#555;font-size:0.7rem">${a.author || ''} · ${a.date || ''}</span></li>`).join('')}
+      headerHTML = `
+        <button class="detail-close" id="detailClose">&times;</button>
+        <div class="detail-cat-tag" style="background:${d.color}20;color:${d.color}">Category</div>
+        <div class="detail-title">${d.label}</div>
+        <div class="detail-meta">${articles.length} articles</div>
+      `;
+      bodyHTML = `
+        <div class="detail-section">
+          <h3>All articles</h3>
+          <ul class="detail-article-list">
+            ${articles.sort((a,b) => (b.date||'').localeCompare(a.date||'')).map(a =>
+              `<li><a href="${a.url}" target="_blank">${a.label || a.title}</a><br><span class="art-date">${a.author || ''} &middot; ${a.date || ''}</span></li>`
+            ).join('')}
           </ul>
         </div>
       `;
     }
 
-    panelContent.innerHTML = html;
-    sidePanel.classList.add('open');
+    detailHeader.innerHTML = headerHTML;
+    detailBody.innerHTML = bodyHTML;
+    detailPanel.classList.add('open');
+
+    // Bind close
+    const closeBtn = $('detailClose');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        selectedNode = null;
+        detailPanel.classList.remove('open');
+        applyFilters();
+      });
+    }
   }
 
-  // Search
+  // ── Search ──
   let searchTimeout;
   searchInput.addEventListener('input', () => {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(() => {
       searchQuery = searchInput.value.toLowerCase().trim();
-
       if (searchQuery) {
-        // Find best matching node and zoom to it
         let bestNode = null;
         let bestScore = Infinity;
-
         graph.forEachNode((node, attrs) => {
           const label = (attrs.label || '').toLowerCase();
           if (label.includes(searchQuery)) {
@@ -732,32 +1117,54 @@
             }
           }
         });
-
         if (bestNode) {
           const pos = graph.getNodeAttributes(bestNode);
-          const camera = renderer.getCamera();
-          camera.animate({ x: pos.x, y: pos.y, ratio: 0.3 }, { duration: 500 });
+          renderer.getCamera().animate({ x: pos.x, y: pos.y, ratio: 0.3 }, { duration: 400 });
         }
       }
-
       applyFilters();
     }, 200);
   });
 
-  // ESC to close
+  // ── Keyboard ──
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-      if (sidePanel.classList.contains('open')) {
+      if (detailPanel.classList.contains('open')) {
         selectedNode = null;
-        sidePanel.classList.remove('open');
+        detailPanel.classList.remove('open');
         applyFilters();
+        return;
       }
       if (searchInput.value) {
         searchInput.value = '';
         searchQuery = '';
         applyFilters();
+        return;
       }
+      // Reset view
+      renderer.getCamera().animate({ x: 0.5, y: 0.5, ratio: 1 }, { duration: 400 });
     }
+    if (e.key === '/' && document.activeElement !== searchInput) {
+      e.preventDefault();
+      searchInput.focus();
+    }
+  });
+
+  // ── Top bar buttons ──
+  $('toggleInsight').addEventListener('click', () => {
+    insightPanel.classList.toggle('hidden');
+    $('toggleInsight').classList.toggle('active');
+  });
+
+  $('resetView').addEventListener('click', () => {
+    selectedNode = null;
+    searchInput.value = '';
+    searchQuery = '';
+    detailPanel.classList.remove('open');
+    hiddenCategories.clear();
+    document.querySelectorAll('.cat-bar-row').forEach(r => r.classList.remove('dimmed'));
+    renderer.getCamera().animate({ x: 0.5, y: 0.5, ratio: 1 }, { duration: 400 });
+    applyFilters();
   });
 
 })();
