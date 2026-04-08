@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Knowledge Graph — Comunitatea Liberala</title>
+  <title>Graf de cunoștințe — Comunitatea Liberală</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
@@ -596,23 +596,23 @@
 <!-- TOP BAR -->
 <div class="top-bar">
   <div class="brand">
-    <h1>Knowledge Graph</h1>
+    <h1>Graf de cunoștințe</h1>
     <span class="divider">/</span>
-    <h1 style="color:var(--text-dim);font-weight:400">Comunitatea Liberala</h1>
+    <h1 style="color:var(--text-dim);font-weight:400">Comunitatea Liberală</h1>
   </div>
 
   <div class="search-wrap">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-    <input type="text" id="search" placeholder="Search articles, concepts, people...">
+    <input type="text" id="search" placeholder="Caută articole, concepte, persoane...">
   </div>
 
   <span class="stats-text" id="stats"></span>
 
   <div class="top-actions">
-    <button class="top-btn" id="toggleInsight" title="Toggle insight panel">
+    <button class="top-btn" id="toggleInsight" title="Panou de analiză">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="18" rx="1"/><line x1="14" y1="6" x2="21" y2="6"/><line x1="14" y1="12" x2="21" y2="12"/><line x1="14" y1="18" x2="21" y2="18"/></svg>
     </button>
-    <button class="top-btn" id="resetView" title="Reset view">
+    <button class="top-btn" id="resetView" title="Resetează vederea">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9"/><polyline points="3 3 3 12 12 12"/></svg>
     </button>
   </div>
@@ -621,15 +621,15 @@
 <!-- LEFT INSIGHT PANEL -->
 <div class="insight-panel" id="insightPanel">
   <div class="insight-section" id="catSection">
-    <h2>Categories</h2>
+    <h2>Categorii</h2>
     <div id="catBars"></div>
   </div>
   <div class="insight-section" id="conceptSection">
-    <h2>Top Concepts</h2>
+    <h2>Concepte principale</h2>
     <div id="conceptRanks"></div>
   </div>
   <div class="insight-section" id="recentSection">
-    <h2>Recent Articles</h2>
+    <h2>Articole recente</h2>
     <div id="recentList"></div>
   </div>
 </div>
@@ -649,11 +649,11 @@
 <!-- LOADING -->
 <div class="loading-overlay" id="loading">
   <div class="loading-bar"><div class="loading-bar-fill" id="loadingFill"></div></div>
-  <div class="loading-text" id="loadingText">Loading graph data...</div>
+  <div class="loading-text" id="loadingText">Se încarcă datele grafului...</div>
 </div>
 
 <!-- ONBOARDING HINT -->
-<div class="hint" id="hint">Click a node to inspect &middot; Scroll to zoom &middot; Drag to pan &middot; Esc to reset</div>
+<div class="hint" id="hint">Click pe un nod pentru detalii &middot; Scroll pentru zoom &middot; Trage pentru a naviga &middot; Esc pentru resetare</div>
 
 <!-- LIBS -->
 <script src="https://cdn.jsdelivr.net/npm/graphology@0.25.4/dist/graphology.umd.min.js"></script>
@@ -683,15 +683,16 @@
     const resp = await fetch('graph.json');
     graphData = await resp.json();
   } catch(e) {
-    loadingText.textContent = 'Failed to load graph data';
+    loadingText.textContent = 'Eroare la încărcarea datelor';
     loadingFill.style.background = '#e84855';
     return;
   }
   loadingFill.style.width = '50%';
-  loadingText.textContent = 'Building graph layout...';
+  loadingText.textContent = 'Se construiește graful...';
 
   const meta = graphData.metadata;
   const catColors = meta.categoryColors;
+  const catLabels = meta.categoryLabels || {};
 
   // ── Build graphology graph ──
   const graph = new graphology.Graph();
@@ -748,7 +749,7 @@
   });
 
   loadingFill.style.width = '90%';
-  loadingText.textContent = 'Rendering...';
+  loadingText.textContent = 'Se randează...';
 
   // ── Sigma renderer ──
   const renderer = new Sigma(graph, container, {
@@ -774,7 +775,7 @@
   container.addEventListener('mousedown', () => hintEl.classList.add('hidden'), { once: true });
 
   // ── Stats ──
-  statsEl.textContent = `${meta.totalArticles} articles / ${meta.totalConcepts} concepts / ${meta.totalEdges} edges`;
+  statsEl.textContent = `${meta.totalArticles} articole / ${meta.totalConcepts} concepte / ${meta.totalEdges} conexiuni`;
 
   // ── State ──
   let hoveredNode = null;
@@ -804,7 +805,7 @@
     const row = document.createElement('div');
     row.className = 'cat-bar-row';
     row.innerHTML = `
-      <span class="cat-bar-label">${cat}</span>
+      <span class="cat-bar-label">${catLabels[cat] || cat}</span>
       <div class="cat-bar-track"><div class="cat-bar-fill" style="width:${pct}%;background:${color}"></div></div>
       <span class="cat-bar-count">${count}</span>
     `;
@@ -888,7 +889,7 @@
 
       // Category filter
       if (nType === 'article' && hiddenCategories.has(nData.category)) return { ...data, hidden: true };
-      if (nType === 'category' && hiddenCategories.has(nData.label)) return { ...data, hidden: true };
+      if (nType === 'category' && hiddenCategories.has(nData.catKey)) return { ...data, hidden: true };
 
       // Search
       if (searchQuery) {
@@ -919,7 +920,7 @@
       if (hoveredNode) {
         const hNeighbors = getNeighbors(hoveredNode);
         if (!hNeighbors.has(node)) {
-          return { ...data, color: data.color.length === 7 ? data.color + '30' : data.color, label: '' };
+          return { ...data, color: '#1e1e26', label: '' };
         }
         if (node === hoveredNode) {
           return { ...data, size: data.size * 1.2 };
@@ -977,15 +978,16 @@
   function showTooltip(nodeId) {
     const attrs = graph.getNodeAttributes(nodeId);
     const d = attrs._data;
-    let typeLabel = attrs._type;
+    const typeLabels = { article: 'articol', concept: 'concept', category: 'categorie' };
+    let typeLabel = typeLabels[attrs._type] || attrs._type;
     let sub = '';
 
     if (attrs._type === 'article') {
       sub = (d.author || '') + (d.date ? ' &middot; ' + d.date : '');
     } else if (attrs._type === 'concept') {
-      sub = (d.mentions || 0) + ' articles';
+      sub = (d.mentions || 0) + ' articole';
     } else if (attrs._type === 'category') {
-      sub = (d.articleCount || 0) + ' articles';
+      sub = (d.articleCount || 0) + ' articole';
     }
 
     tooltipEl.innerHTML = `
@@ -1022,18 +1024,19 @@
 
     if (type === 'article') {
       const catColor = catColors[d.category] || '#888';
+      const catLabel = d.categoryLabel || catLabels[d.category] || d.category;
       headerHTML = `
         <button class="detail-close" id="detailClose">&times;</button>
-        <div class="detail-cat-tag" style="background:${catColor}20;color:${catColor}">${d.category}</div>
+        <div class="detail-cat-tag" style="background:${catColor}20;color:${catColor}">${catLabel}</div>
         <div class="detail-title">${d.label}</div>
-        <div class="detail-meta">${d.author || 'Unknown'} &middot; ${d.date || ''}</div>
+        <div class="detail-meta">${d.author || 'Necunoscut'} &middot; ${d.date || ''}</div>
       `;
       bodyHTML = `
-        ${d.summary ? `<div class="detail-section"><h3>Summary</h3><p>${d.summary}</p></div>` : ''}
-        ${d.talking_points?.length ? `<div class="detail-section"><h3>Key Points</h3><ul>${d.talking_points.map(t => `<li>${t}</li>`).join('')}</ul></div>` : ''}
-        ${d.people?.length ? `<div class="detail-section"><h3>People</h3><div class="detail-tags">${d.people.map(p => `<span class="detail-tag">${p}</span>`).join('')}</div></div>` : ''}
-        ${d.countries?.length ? `<div class="detail-section"><h3>Countries</h3><div class="detail-tags">${d.countries.map(c => `<span class="detail-tag">${c}</span>`).join('')}</div></div>` : ''}
-        ${d.url ? `<a class="detail-link" href="${d.url}" target="_blank">Read article <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>` : ''}
+        ${d.summary ? `<div class="detail-section"><h3>Rezumat</h3><p>${d.summary}</p></div>` : ''}
+        ${d.talking_points?.length ? `<div class="detail-section"><h3>Puncte cheie</h3><ul>${d.talking_points.map(t => `<li>${t}</li>`).join('')}</ul></div>` : ''}
+        ${d.people?.length ? `<div class="detail-section"><h3>Persoane</h3><div class="detail-tags">${d.people.map(p => `<span class="detail-tag">${p}</span>`).join('')}</div></div>` : ''}
+        ${d.countries?.length ? `<div class="detail-section"><h3>Țări</h3><div class="detail-tags">${d.countries.map(c => `<span class="detail-tag">${c}</span>`).join('')}</div></div>` : ''}
+        ${d.url ? `<a class="detail-link" href="${d.url}" target="_blank">Citește articolul <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>` : ''}
       `;
     } else if (type === 'concept') {
       const neighbors = [];
@@ -1046,11 +1049,11 @@
         <button class="detail-close" id="detailClose">&times;</button>
         <div class="detail-cat-tag" style="background:${d.color}20;color:${d.color}">Concept</div>
         <div class="detail-title">${d.label}</div>
-        <div class="detail-meta">${d.mentions || neighbors.length} articles</div>
+        <div class="detail-meta">${d.mentions || neighbors.length} articole</div>
       `;
       bodyHTML = `
         <div class="detail-section">
-          <h3>Articles mentioning this concept</h3>
+          <h3>Articole care menționează acest concept</h3>
           <ul class="detail-article-list">
             ${neighbors.sort((a,b) => (b.date||'').localeCompare(a.date||'')).map(a =>
               `<li><a href="${a.url}" target="_blank">${a.label || a.title}</a><br><span class="art-date">${a.date || ''} &middot; ${a.category || ''}</span></li>`
@@ -1067,13 +1070,13 @@
 
       headerHTML = `
         <button class="detail-close" id="detailClose">&times;</button>
-        <div class="detail-cat-tag" style="background:${d.color}20;color:${d.color}">Category</div>
+        <div class="detail-cat-tag" style="background:${d.color}20;color:${d.color}">Categorie</div>
         <div class="detail-title">${d.label}</div>
-        <div class="detail-meta">${articles.length} articles</div>
+        <div class="detail-meta">${articles.length} articole</div>
       `;
       bodyHTML = `
         <div class="detail-section">
-          <h3>All articles</h3>
+          <h3>Toate articolele</h3>
           <ul class="detail-article-list">
             ${articles.sort((a,b) => (b.date||'').localeCompare(a.date||'')).map(a =>
               `<li><a href="${a.url}" target="_blank">${a.label || a.title}</a><br><span class="art-date">${a.author || ''} &middot; ${a.date || ''}</span></li>`

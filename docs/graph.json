@@ -2,67 +2,75 @@
   "nodes": [
     {
       "id": "cat:Ukraine/Russia",
-      "label": "Ukraine/Russia",
+      "label": "Ucraina / Rusia",
       "type": "category",
       "color": "#e84855",
-      "size": 49.0,
-      "articleCount": 6
+      "size": 40.0,
+      "catKey": "Ukraine/Russia",
+      "articleCount": 0
     },
     {
       "id": "cat:Romania Politics",
-      "label": "Romania Politics",
+      "label": "Politică România",
       "type": "category",
       "color": "#f5a623",
-      "size": 122.5,
-      "articleCount": 55
+      "size": 40.0,
+      "catKey": "Romania Politics",
+      "articleCount": 0
     },
     {
       "id": "cat:USA",
-      "label": "USA",
+      "label": "SUA",
       "type": "category",
       "color": "#44bd6e",
-      "size": 49.0,
-      "articleCount": 6
+      "size": 40.0,
+      "catKey": "USA",
+      "articleCount": 0
     },
     {
       "id": "cat:European Union",
-      "label": "European Union",
+      "label": "Uniunea Europeană",
       "type": "category",
       "color": "#3a86ff",
-      "size": 64.0,
-      "articleCount": 16
+      "size": 40.0,
+      "catKey": "European Union",
+      "articleCount": 0
     },
     {
       "id": "cat:History",
-      "label": "History",
+      "label": "Istorie",
       "type": "category",
       "color": "#b07cd8",
-      "size": 43.0,
-      "articleCount": 2
+      "size": 40.0,
+      "catKey": "History",
+      "articleCount": 0
     },
     {
       "id": "cat:Economics",
-      "label": "Economics",
+      "label": "Economie",
       "type": "category",
       "color": "#ff7b3a",
-      "size": 43.0,
-      "articleCount": 2
+      "size": 40.0,
+      "catKey": "Economics",
+      "articleCount": 0
     },
     {
       "id": "cat:Geopolitics",
-      "label": "Geopolitics",
+      "label": "Geopolitică",
       "type": "category",
       "color": "#17c3b2",
-      "size": 68.5,
-      "articleCount": 19
+      "size": 40.0,
+      "catKey": "Geopolitics",
+      "articleCount": 0
     },
     {
       "id": "cat:Others",
-      "label": "Others",
+      "label": "Altele",
       "type": "category",
       "color": "#8899aa",
-      "size": 41.5,
-      "articleCount": 1
+      "size": 40.0,
+      "catKey": "Others",
+      "articleCount": 0
     },
     {
       "id": "article:a-fost-ceausescu-un-patriot",
@@ -71,6 +79,7 @@
       "color": "#f5a623",
       "size": 5.2,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article criticizes Defense Minister Radu Miruță (USR) for his ambiguous response when asked whether Ceaușescu was a patriot on Digi24, arguing that his attempt to appear balanced on the topic of a dictator was a strategic and moral failure. The author argues that non-sovereignist political leaders in Romania mistakenly try to attract nationalist voters through ambiguity instead of taking clear moral stances, which only weakens their own base. The piece concludes with an unequivocal condemnation of Ceaușescu as a dictator and criminal, debunking the industrialization myth through the concept of opportunity cost.",
       "talking_points": [
         "Radu Miruță's ambiguous TV response about Ceaușescu being a patriot was both a moral and strategic failure for a USR minister",
@@ -105,6 +114,7 @@
       "color": "#f5a623",
       "size": 6.4,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article argues that Romania's deepest problem is not its budget deficit but a pervasive moral bankruptcy—anomie—characterized by the erosion of social trust, moral standards, and legitimate leadership. Drawing on Leo Srole's concept and Hannah Arendt's 'banality of evil,' the author contends that Romanians have normalized corruption, abuse, and institutional failure, retreating into tribal subgroups amplified by social media algorithms. While acknowledging that current leaders like PM Bolojan are not corrupt, the author warns they are treating symptoms (fiscal deficit) rather than the root cause (societal anomie).",
       "talking_points": [
         "Romania's real crisis is moral collapse (anomie), not just the budget deficit",
@@ -135,6 +145,7 @@
       "color": "#f5a623",
       "size": 4.6,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The Romanian government announced plans to launch a state-produced mineral water brand called 'Dacia,' entering an already mature and competitive market. The article critiques this as toxic state interventionism, arguing the state lacks the competence to compete with established private brands and will waste taxpayer money on a predictable failure, similar to past failed state ventures like the Unirea store.",
       "talking_points": [
         "The Romanian mineral water market is worth approximately 1 billion euros with 80% controlled by five major brands, leaving little room for a state entrant",
@@ -158,6 +169,7 @@
       "color": "#f5a623",
       "size": 5.2,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article argues that Romanian entrepreneurs are poor 'investors' in the state because, despite being major tax contributors, they remain politically disengaged and unrepresented. With over 940,000 registered companies, entrepreneurs form a significant potential political force that passively watches as others decide how their tax money is spent.",
       "talking_points": [
         "Romanian entrepreneurs are significant contributors to the state budget through direct taxes and indirect job creation, yet they lack political representation",
@@ -183,6 +195,7 @@
       "color": "#3a86ff",
       "size": 7.0,
       "category": "European Union",
+      "categoryLabel": "Uniunea Europeană",
       "summary": "The 2025 World Economic Forum in Davos marked a shift from technocratic optimism to cold pragmatism, with Mark Carney and Emmanuel Macron delivering manifestos for a new era of sovereignty. The author argues Romania must prioritize EU integration as its primary strategic alliance, build a European defense pillar within NATO, and treat the US relationship as a mature partnership rather than a dependency.",
       "talking_points": [
         "Mark Carney declared the end of the rules-based international order, calling it a 'useful fiction,' and urged countries to stop pretending global integration is mutually beneficial when great powers use it as a tool of subordination",
@@ -215,6 +228,7 @@
       "color": "#f5a623",
       "size": 6.4,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article harshly criticizes Romanian Prime Minister Nicușor Dan's participation at the inaugural Peace Council meeting organized by Trump in Washington, arguing his poor English, diplomatic gaffes, and submissive attitude exposed his inadequacy for leadership. The author contends that Romania's alignment with Trump over European partners is a strategic error, as Trump does not represent enduring American values and European allies are deliberately distancing themselves from his initiatives.",
       "talking_points": [
         "Nicușor Dan's poor English skills, uncontrolled laughter, and protocol failures at the Peace Council demonstrated his unsuitability for high office",
@@ -262,6 +276,7 @@
       "color": "#17c3b2",
       "size": 7.6,
       "category": "Geopolitics",
+      "categoryLabel": "Geopolitică",
       "summary": "The article analyzes how raw, unashamed exercise of power is becoming normalized globally, from Putin's Russia to Trump's America, giving rise to a 'necropolitical oligarchy' of elites who govern through death, abandonment, and social exclusion. Drawing on Gramsci's concept of interregnum and Orwell's geopolitical warning in 1984, the author argues the EU may be the last hope against authoritarian drift and must pursue deeper political union to become a credible strategic power.",
       "talking_points": [
         "Russia dropped its democratic facade as relations with the West deteriorated, openly displaying its brutal power structure",
@@ -294,6 +309,7 @@
       "color": "#f5a623",
       "size": 4.6,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article analyzes Bucharest's district heating crisis, where over 3,500 buildings lost adequate heating after a major plant failure in January 2026. It critiques simplistic solutions like individual electric heating, arguing instead for EU-funded modernization, energy efficiency improvements, and decentralized thermal islands inspired by European capitals like Copenhagen, Berlin, Amsterdam, and Vienna.",
       "talking_points": [
         "Over 3,500 buildings in Bucharest lost adequate heating after the CET Sud breakdown, affecting 37-38% of connected buildings",
@@ -326,6 +342,7 @@
       "color": "#f5a623",
       "size": 5.2,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article investigates Brian Brown, president of the World Congress of Families, and his extensive ties to Russian-linked figures, oligarchs, and pro-Kremlin politicians, while documenting how Romania's AUR party has embraced Brown and his network. It traces the WCF's origins in Moscow, its connections to sanctioned Russian oligarch Konstantin Malofeev, and how these networks operate through pro-life and traditional family advocacy to advance Russian influence in Romania and Moldova.",
       "talking_points": [
         "The World Congress of Families was founded in Moscow in 1995 and maintains deep institutional ties to Russian actors including sanctioned oligarch Konstantin Malofeev",
@@ -370,6 +387,7 @@
       "color": "#3a86ff",
       "size": 5.8,
       "category": "European Union",
+      "categoryLabel": "Uniunea Europeană",
       "summary": "The article examines Bulgaria's successful adoption of the euro on January 1, 2026, and how this milestone has affected Romanian-Bulgarian relations. It explores the mix of jealousy, schadenfreude, and admiration among Romanian elites, while arguing that both countries would benefit from deeper cooperation rather than blind competition. The author calls for resetting stereotypes rooted in Cold War-era perceptions and building a genuine win-win economic relationship.",
       "talking_points": [
         "Romania's elites and business interests pragmatically avoid eurozone accession to escape stricter fiscal controls, not because Romania is incapable of joining",
@@ -401,6 +419,7 @@
       "color": "#17c3b2",
       "size": 6.4,
       "category": "Geopolitics",
+      "categoryLabel": "Geopolitică",
       "summary": "The article argues that Europe must achieve strategic independence and equality with the United States to restore a healthy transatlantic alliance. It traces the history of US-European relations from post-WWII American hegemony through the Ukraine war's wake-up call, arguing that Trump's autarchic tendencies and the Greenland crisis have catalyzed European federalist sentiment and defense autonomy.",
       "talking_points": [
         "Europe's military dependence on the US since WWII was a strategic error now exposed by Russia's invasion of Ukraine and Trump's isolationism",
@@ -444,6 +463,7 @@
       "color": "#17c3b2",
       "size": 5.2,
       "category": "Geopolitics",
+      "categoryLabel": "Geopolitică",
       "summary": "The article criticizes the Romanian left's ideological contradiction of opposing Western imperialism while ignoring human rights abuses by anti-Western authoritarian regimes like Iran, Russia, and Hezbollah. The author argues that this selective anti-imperialism leads to a cynical triumph of ideology over humanist values, as leftists stay silent on Iranian protesters being killed, Ukrainian civilians being massacred, and women's oppression under theocratic regimes.",
       "talking_points": [
         "The Romanian left faces a false dilemma between consistent anti-imperialism and supporting Iranian protesters against the mullah regime",
@@ -477,6 +497,7 @@
       "color": "#f5a623",
       "size": 5.2,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article criticizes Romanian PM Ilie Bolojan's decision to devalue doctoral degrees and formal education through budget cuts and symbolic messaging. The author, himself a PhD holder, argues that formal education is the foundational condition for liberal democracy and that undermining it follows the playbook of authoritarian regimes.",
       "talking_points": [
         "Bolojan, who holds no doctorate himself, is making decisions that diminish the value of doctoral degrees while tolerating plagiarist ministers in his own government",
@@ -520,6 +541,7 @@
       "color": "#f5a623",
       "size": 5.2,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "A Romanian liberal commentator examines how increasing teaching hours by 2 hours has negatively impacted tenured teachers, particularly those without political party affiliations, who lose class hours to politically connected colleagues. The article critiques the lack of proper mentoring systems in Romanian education and calls for continuous teacher coaching as a solution.",
       "talking_points": [
         "Increasing the teaching norm by 2 hours has led to tenured teachers losing parts of their teaching load, with politically unaffiliated teachers being disadvantaged",
@@ -545,6 +567,7 @@
       "color": "#f5a623",
       "size": 7.0,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "Political analyst Cristian Preda examines the growing discontent among President Nicușor Dan's voter base, identifying eight distinct groups ranging from loyal supporters to radical critics. The article catalogs grievances including Dan's perceived closeness to sovereignists and PSD, his failure to appoint intelligence service chiefs, lack of vocal support for PM Bolojan, and general passivity, while noting that some voters remain patient and supportive.",
       "talking_points": [
         "A Facebook post about losing confidence in President Dan garnered 80,000 views and 600+ comments in 24 hours, revealing widespread voter frustration",
@@ -577,6 +600,7 @@
       "color": "#e84855",
       "size": 4.6,
       "category": "Ukraine/Russia",
+      "categoryLabel": "Ucraina / Rusia",
       "summary": "The article analyzes how the Kremlin's propaganda apparatus exploits the Epstein scandal to delegitimize Western elites, justify Russia's war in Ukraine, and reinforce narratives about a morally corrupt 'satanic' West. Russian propagandists like Solovyov, Zakharova, and Dugin use the revelations to portray Western leaders as complicit pedophiles while exempting Trump and positioning Putin as a moral defender of traditional values.",
       "talking_points": [
         "Russian propaganda uses the Epstein case to portray Western elites as morally depraved and 'satanic', reinforcing the Kremlin's civilizational war narrative",
@@ -630,6 +654,7 @@
       "color": "#f5a623",
       "size": 5.2,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "Political scientist Cristian Preda explains why he tore up a copy of his French doctoral diploma on live TV at Digi24, as a protest against the devaluation of doctoral degrees in Romania. He identifies three causes: inflation of doctoral theses driven by salary bonuses, lack of institutional authority to combat fraud, and the government's failure to distinguish between legitimate and plagiarized doctorates.",
       "talking_points": [
         "Doctoral degrees in Romania have been devalued by an inflation of theses, driven by salary bonuses across all public sectors, not just academia",
@@ -662,6 +687,7 @@
       "color": "#f5a623",
       "size": 7.6,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article criticizes President Nicușor Dan's poor communication during a confrontation with civil society protesters demanding he reject controversial prosecutor nominations proposed by PSD Justice Minister Radu Marinescu. His arrogant dismissal of journalists and civil society has fueled suspicions that he has become a prisoner of the PSD-dominated political system, echoing the failed presidency of Emil Constantinescu.",
       "talking_points": [
         "Nicușor Dan confronted Declic protesters and arrogantly claimed to have 'a hundred times more information' than them, alienating his own voter base",
@@ -705,6 +731,7 @@
       "color": "#17c3b2",
       "size": 5.8,
       "category": "Geopolitics",
+      "categoryLabel": "Geopolitică",
       "summary": "Francis Fukuyama argues that Western civilization is fundamentally defined by Enlightenment values—openness, tolerance, and skepticism—rather than by Christian faith or ethnic heritage, as suggested by Marco Rubio's speech at the Munich Security Conference. He traces how post-Reformation religious wars led to the separation of religion from politics, creating modern liberalism, and warns against reactionary attempts to redefine the West in narrow religious or ethnic terms.",
       "talking_points": [
         "Marco Rubio's Munich speech defined Western civilization through Christian faith and shared heritage/origins, which Fukuyama sees as a fundamentally different vision from mainstream European understanding",
@@ -743,6 +770,7 @@
       "color": "#17c3b2",
       "size": 7.0,
       "category": "Geopolitics",
+      "categoryLabel": "Geopolitică",
       "summary": "The article examines whether Trump's purely transactional approach to foreign policy represents a permanent shift in international relations rather than a temporary anomaly. It questions whether Romania and other states have the institutional capacity, skilled negotiators, and real leverage to survive in a world where diplomacy is replaced by raw power dynamics and constant renegotiation.",
       "talking_points": [
         "Trump has dismantled the post-WWII international order by treating states as assets rather than partners, withdrawing from 66 international organizations and ignoring international law",
@@ -770,6 +798,7 @@
       "color": "#17c3b2",
       "size": 8.8,
       "category": "Geopolitics",
+      "categoryLabel": "Geopolitică",
       "summary": "The article argues that Europe should stand up to Trump's Greenland ambitions rather than appease them, debunking claims that Russia or China pose a real threat to the territory. It contends that the main medium-term military security threat to Europe is currently the US under Trump, and advocates for European federalization and unity as the pragmatic response.",
       "talking_points": [
         "Russia and China lack the capability and often the intention to project power over Greenland, making Trump's justification for annexation unfounded",
@@ -808,6 +837,7 @@
       "color": "#f5a623",
       "size": 7.0,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article analyzes Romania's political landscape heading into 2026, focusing on the Constitutional Court crisis exemplified by judge Giani Stan still being a doctoral student while serving on the court. It argues that the resolution of the judiciary crisis will shape the broader political balance between PSD, Premier Bolojan's camp, and President Nicușor Dan's circle, and that competence and honesty will be decisive factors in 2026.",
       "talking_points": [
         "Constitutional Court judge Giani Stan is still a doctoral student, symbolizing competence problems in Romania's judiciary",
@@ -854,6 +884,7 @@
       "color": "#3a86ff",
       "size": 4.6,
       "category": "European Union",
+      "categoryLabel": "Uniunea Europeană",
       "summary": "The article analyzes Romania's suspended 231 million euros from the EU Recovery and Resilience Facility due to failure to meet Milestone 215 on special pensions reform. Despite a government delegation to Brussels and the Constitutional Court finally validating the reform law, legal and procedural obstacles remain because the 6-month deadline expired in November 2025 and the law has not yet entered into force.",
       "talking_points": [
         "Romania risks losing 231 million euros from PNRR because the special pensions reform milestone was not met within the regulatory 6-month deadline",
@@ -885,6 +916,7 @@
       "color": "#f5a623",
       "size": 4.6,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article critically examines a DNA (National Anticorruption Directorate) case against lawyer Adriana Georgescu, accused of influence peddling involving President Nicușor Dan and PM Ilie Bolojan, arguing the case is extremely thin on evidence. The author raises serious questions about whether the case was manufactured as a pretext to surveil Romania's top leadership, potentially serving as kompromat useful to Russia's interests in discrediting anti-Russian EU governments.",
       "talking_points": [
         "The DNA case against lawyer Adriana Georgescu appears to lack substantive evidence - she promised influence she couldn't deliver, making it closer to fraud than influence peddling",
@@ -919,6 +951,7 @@
       "color": "#3a86ff",
       "size": 5.8,
       "category": "European Union",
+      "categoryLabel": "Uniunea Europeană",
       "summary": "Anne Applebaum analyzes Viktor Orbán's unprecedented cognitive warfare campaign ahead of Hungarian elections, involving AI-generated deepfakes, Russian propaganda support, and international far-right solidarity. Despite 16 years of governance that made Hungary the EU's most corrupt and least free member, Fidesz diverts attention from domestic failures by fabricating an existential Ukrainian threat to mobilize voters.",
       "talking_points": [
         "Orbán's party uses AI-generated deepfakes on TikTok depicting Zelensky and opposition leader Péter Magyar in fabricated scenarios to manipulate voters",
@@ -969,6 +1002,7 @@
       "color": "#f5a623",
       "size": 6.4,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article argues that Romania's fundamental problem is systemic corruption, not the fiscal adjustment measures promoted by PM Bolojan. While criticizing some of Bolojan's tax increases as poorly implemented, the author contends that the political coalition lacks the will to fight corruption, as key figures from both PNL and PSD are implicated in corrupt practices, leaving citizens to bear the cost of a fundamentally broken system.",
       "talking_points": [
         "The debate over Bolojan's fiscal measures distracts from the root cause: systemic corruption that has plagued Romania since 1989",
@@ -1009,6 +1043,7 @@
       "color": "#f5a623",
       "size": 5.8,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "PSD mayors from Iași county boycotted a meeting with Prime Minister Bolojan, claiming it would legitimize austerity, despite PSD having the most ministers in government. The article analyzes PSD's increasing duplicity and hypocrisy, drawing parallels with Slovakia's SMER party which was expelled from the European socialist family (PES) after allying with nationalists.",
       "talking_points": [
         "PSD mayors boycotted a meeting with PM Bolojan while PSD simultaneously holds the most ministerial positions in government",
@@ -1041,6 +1076,7 @@
       "color": "#f5a623",
       "size": 5.2,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article analyzes how the Dutch social-liberal party D66 rebuilt itself after a massive electoral defeat in 2023 by embracing radical honesty, empathy, and executive optimism. It draws direct parallels to Romania's USR party, arguing it faces the same crossroads and should adopt D66's blueprint of mission-based governance, fiscal reform, and citizen-centered administration.",
       "talking_points": [
         "D66 lost over 60% of its parliamentary seats in 2023 and chose radical self-criticism over blame-shifting, publicly admitting its elitist and technocratic disconnect from ordinary citizens",
@@ -1067,6 +1103,7 @@
       "color": "#e84855",
       "size": 7.0,
       "category": "Ukraine/Russia",
+      "categoryLabel": "Ucraina / Rusia",
       "summary": "The article examines how Romanians and their political leaders have responded to the Ukraine war as it enters its fifth year, noting declining public support for Ukraine and growing moral relativism among politicians. It criticizes President Nicușor Dan and his advisor Marius Lazurca for ambiguous positions toward Russia, and highlights the spread of Russian propaganda through academic institutions and political parties like AUR.",
       "talking_points": [
         "Romanian public support for Ukraine has significantly declined — those believing Russia should return occupied territories dropped from 64.7% to 53.3%, and 42.6% oppose any aid to Ukraine",
@@ -1110,6 +1147,7 @@
       "color": "#e84855",
       "size": 4.6,
       "category": "Ukraine/Russia",
+      "categoryLabel": "Ucraina / Rusia",
       "summary": "The article reconstructs the Kremlin's chain of command behind the 'Other Ukraine' disinformation project, based on testimony from arrested operative Kirilo Molchanov. It reveals how Putin's Presidential Administration, through intermediaries like Kirienko and the Social Design Agency, coordinates propaganda operations targeting Western support for Ukraine, while also involving FSB and SVR intelligence services.",
       "talking_points": [
         "Kirilo Molchanov, a pro-Russian propagandist working for Viktor Medvedchuk's 'Other Ukraine' project, was captured in a Ukrainian sting operation conducted in Poland and transferred to Kyiv",
@@ -1150,6 +1188,7 @@
       "color": "#f5a623",
       "size": 5.8,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article examines allegations that Justice Minister Predoiu bypassed the official selection commission to appoint Marius Voineag as head of DNA (National Anticorruption Directorate), despite the commission recommending former DNA chief Crin Bologa. Author Cristian Ghinea argues this represents a politically motivated capture of justice institutions, citing journalist Ioana Dogioiu's earlier reporting that Voineag was chosen for helping Nicolae Ciucă escape a plagiarism verdict. Ghinea announces he will file a parliamentary interpellation and a freedom of information request to obtain the commission's actual decision.",
       "talking_points": [
         "Voineag claims he was selected by the commission, but former DNA chief Bologa and journalist Dogioiu both contradict this, saying Predoiu overrode the commission's recommendation",
@@ -1186,6 +1225,7 @@
       "color": "#44bd6e",
       "size": 5.2,
       "category": "USA",
+      "categoryLabel": "SUA",
       "summary": "Francis Fukuyama criticizes Trump's military intervention against Iran, arguing it repeats the catastrophic mistakes of past US regime change efforts in Afghanistan, Iraq, and Libya. He contends that airstrikes alone cannot produce political change and that the administration's ignorance of regional expertise and reliance on loyalists has led to dangerous improvisation.",
       "talking_points": [
         "Trump's strike on Iran was poorly planned, assuming the regime would collapse quickly like Venezuela, but Iran's retaliatory capacity was vastly underestimated",
@@ -1226,6 +1266,7 @@
       "color": "#44bd6e",
       "size": 5.2,
       "category": "USA",
+      "categoryLabel": "SUA",
       "summary": "Francis Fukuyama analyzes the US Supreme Court's decision to strike down Trump's tariffs imposed under IEEPA, arguing it fatally undermined his ability to use tariffs as arbitrary political weapons. He highlights how Trump used discretionary tariff power for personal enrichment and political coercion, and argues the ruling is a victory for institutional governance both domestically and internationally.",
       "talking_points": [
         "The Supreme Court's annulment of IEEPA-based tariffs removed Trump's ability to set arbitrary, country-specific tariff rates as political leverage",
@@ -1256,6 +1297,7 @@
       "color": "#f5a623",
       "size": 7.0,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "A satirical commentary by Cristian Preda cataloging the absurdities of Romanian politics in a single week, including a minister's former chief of staff hiding 500,000 euros in shoe boxes, parliamentary attempts to decriminalize praise of war criminals, chaotic fuel price compensation decisions, and legislative flip-flopping. The author uses rhetorical questions to highlight how uniquely dysfunctional Romania's political scene is.",
       "talking_points": [
         "A former ministerial chief of staff was caught storing 500,000 euros in shoe boxes and was recorded by prosecutors whispering obscenities",
@@ -1281,6 +1323,7 @@
       "color": "#e84855",
       "size": 6.4,
       "category": "Ukraine/Russia",
+      "categoryLabel": "Ucraina / Rusia",
       "summary": "Finnish President Alexander Stubb argues at Davos that Putin has already strategically lost the war in Ukraine, having failed to absorb Ukraine, inadvertently expanded NATO, and triggered European remilitarization. Putin continues the war because it has become 'too big to fail' — stopping without a victory would collapse his myth of power and destabilize his internal control.",
       "talking_points": [
         "Putin has failed all strategic objectives: Ukraine is moving toward EU membership, NATO expanded with Finland and Sweden, and Europe is remilitarizing",
@@ -1310,6 +1353,7 @@
       "color": "#f5a623",
       "size": 5.8,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article examines why Romanian sovereignist George Simion displays servile behavior toward Trump, unlike European counterparts such as Meloni, Farage, and Le Pen who pushed back against Trump's Greenland threats. Author Cristian Ghinea argues this pattern of external subservience is a recurring theme in Romanian political history, from Antonescu's relationship with Hitler to modern politicians competing to serve foreign powers.",
       "talking_points": [
         "European sovereignists like Meloni, Farage, Le Pen, and AfD all rejected Trump's Greenland ambitions, while Simion embarrassingly pandered to the White House during the crisis",
@@ -1355,6 +1399,7 @@
       "color": "#f5a623",
       "size": 8.2,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "Prime Minister Ilie Bolojan faces internal PNL opposition and systematic PSD obstruction in his attempts to reform Romania's administration and reduce government spending. While enjoying public support as an honest reformist, Bolojan risks compromising himself by endlessly accommodating PSD's blocking tactics, and critics argue he lacks political vision beyond accounting efficiency.",
       "talking_points": [
         "Bolojan received a near-unanimous confidence vote from PNL's National Political Bureau but failed to secure the two-thirds majority needed to dismiss underperforming county organization leaders, revealing his support is shallow",
@@ -1390,6 +1435,7 @@
       "color": "#f5a623",
       "size": 6.4,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article critiques AUR leader George Simion's embrace of Trumpism, from cutting a Greenland-shaped cake at a Republican celebration to his party's disruption of Romania's 1859 Union Day ceremonies. The author argues that Romanian 'patriots' have imported American political tactics, particularly Trump's strategy of delegitimizing elected leaders.",
       "talking_points": [
         "George Simion attended a Republican anniversary event celebrating Trump's return to the White House, where he cut a Greenland-shaped cake decorated with the American flag",
@@ -1423,6 +1469,7 @@
       "color": "#17c3b2",
       "size": 4.6,
       "category": "Geopolitics",
+      "categoryLabel": "Geopolitică",
       "summary": "The article analyzes Matthew Levitt's Foreign Affairs piece warning that after US and Israeli military operations eliminated Ali Khamenei, a weakened and humiliated Iranian regime has abandoned strategic restraint and is poised to unleash global terrorism. Iran's Quds Force is now outsourcing terrorist acts to organized crime networks and social media recruits, shifting from calculated proxy warfare to chaotic, indiscriminate violence driven by institutional desperation.",
       "talking_points": [
         "Iran has shifted from calculated, precision terrorism as a foreign policy tool to chaotic, indiscriminate attacks driven by existential desperation",
@@ -1454,6 +1501,7 @@
       "color": "#44bd6e",
       "size": 7.0,
       "category": "USA",
+      "categoryLabel": "SUA",
       "summary": "The article critiques Trump's foreign policy actions, particularly the intervention in Venezuela and threats toward Greenland, coining the term 'Donroe Doctrine' as a parody of the Monroe Doctrine. The author argues Trump lacks any coherent long-term strategy, operating instead on personal impulses and insecurities, while warning that Europe must wake up to the reality that NATO effectively no longer exists.",
       "talking_points": [
         "Trump's Venezuela intervention was primarily driven by Marco Rubio's political ambitions to build his legacy and position as Trump's successor over Vance",
@@ -1493,6 +1541,7 @@
       "color": "#f5a623",
       "size": 7.6,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article critically analyzes Romanian President Nicușor Dan's decision to attend the inauguration of the Board of Peace (BOP) in Washington, arguing it represents subordination to Trump's authority. The author questions Romania's strategic positioning between the EU and the US, suggesting Dan may be sympathetic to MAGA ideology and risks distancing Romania from core European allies.",
       "talking_points": [
         "The Board of Peace exceeds its UN mandate and makes Trump president-for-life with veto power, representing a form of vassalage that major European powers have rejected",
@@ -1541,6 +1590,7 @@
       "color": "#17c3b2",
       "size": 5.2,
       "category": "Geopolitics",
+      "categoryLabel": "Geopolitică",
       "summary": "The article uses the Epstein files (rebranded 'Trumpstein files') to analyze how global elites compromise themselves through sexual misconduct, enabling blackmail and loyalty networks. It contrasts Europe's accountability responses (resignations, investigations) with America's denial and obstruction, arguing Western civilization's survival depends on European institutional resilience.",
       "talking_points": [
         "Antisocial personality disorder (ASPD) is disproportionately prevalent among top leaders and managers, reaching up to 20%, explaining elite misconduct",
@@ -1586,6 +1636,7 @@
       "color": "#f5a623",
       "size": 6.4,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "USR politician Cristian Ghinea details the institutional abuses committed by PNL during the PSD-PNL coalition years (2020-2024), including judicial harassment of USR mayors, weaponization of state institutions (DNA, ANAF, AEP) against the opposition, and the role of Justice Minister Cătălin Predoiu in the degradation of Romania's justice system. The article argues that PNL enabled a hybrid regime under Iohannis and Ciolacu, and criticizes Predoiu's audacity in confronting USR critics while seeking to lead the SRI intelligence service.",
       "talking_points": [
         "PSD-PNL coalition systematically harassed USR mayors through judicial and institutional pressure, using DNA investigations as leverage to force party defections to PNL",
@@ -1625,6 +1676,7 @@
       "color": "#17c3b2",
       "size": 5.2,
       "category": "Geopolitics",
+      "categoryLabel": "Geopolitică",
       "summary": "The article analyzes how eschatological (end-times) thinking has deeply influenced both American and Russian political ideology. It traces the history of dispensationalism in the US from the 19th century to its modern cultural and political influence, arguing that 55% of American adults believe in Christ's return and that this apocalyptic mindset fuels conspiracy theories and the MAGA movement. The author draws parallels between American evangelical eschatology and Russian ideological currents, suggesting both superpowers are driven by messianic visions.",
       "talking_points": [
         "Dispensationalism, though declining as theology, remains a dominant cultural and political force in America with 55% of adults believing in Christ's return",
@@ -1665,6 +1717,7 @@
       "color": "#f5a623",
       "size": 8.8,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article analyzes Romania's democratic crisis at the start of 2026, focusing on the Constitutional Court (CCR) blockage over magistrates' special pensions, orchestrated by PSD-aligned judges and AUR lawyer Silvia Uscov. Author Rodica Culcer criticizes President Nicușor Dan's 'gradual' reform approach and warns that negotiations with PSD over intelligence service appointments could perpetuate the corrupt system rather than dismantle it.",
       "talking_points": [
         "AUR lawyer Silvia Uscov filed legal challenges coordinated with PSD-controlled courts to block CCR from ruling on magistrates' special pensions law",
@@ -1707,6 +1760,7 @@
       "color": "#44bd6e",
       "size": 5.8,
       "category": "USA",
+      "categoryLabel": "SUA",
       "summary": "Anne Applebaum's new preface to 'Autocracy Inc.' describes how Trump has systematically aligned American domestic and foreign policy with autocratic values, attacking democratic allies while embracing kleptocratic practices. The article draws a parallel between Trump's America and the decline of the Roman Republic, asking whether Trump is a temporary anomaly or a Sulla-like figure heralding institutional decay.",
       "talking_points": [
         "Trump has shifted US foreign policy away from democratic allies (Ukraine, EU, Canada) while showing leniency toward autocratic regimes (Russia, China, Iran)",
@@ -1752,6 +1806,7 @@
       "color": "#f5a623",
       "size": 5.2,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article criticizes proposals for the leadership of Romania's intelligence service (SRI), with UDMR's Kelemen Hunor suggesting Cătălin Predoiu and PSD countering with Claudiu Manda or Mihai Tudose. The author argues all candidates are unsuitable and that these proposals violate President Nicușor Dan's constitutional prerogative to nominate the SRI director, revealing the PSD-PNL-UDMR coalition's intent to maintain control over national security institutions.",
       "talking_points": [
         "Kelemen Hunor's track record of proposing failed candidates, from Crin Antonescu for president to now Predoiu for SRI director",
@@ -1786,6 +1841,7 @@
       "color": "#3a86ff",
       "size": 4.6,
       "category": "European Union",
+      "categoryLabel": "Uniunea Europeană",
       "summary": "The European Commission proposed EU Inc., a pan-European company registration framework allowing fully digital incorporation across all 27 member states within 48 hours for under €100. The author argues this exposes Romania's bureaucratic failures and could render national corporate frameworks irrelevant for high-value digital companies if states don't modernize.",
       "talking_points": [
         "EU Inc. creates a 28th optional legal framework for company registration across the EU, bypassing cumbersome national bureaucracies",
@@ -1818,6 +1874,7 @@
       "color": "#3a86ff",
       "size": 5.2,
       "category": "European Union",
+      "categoryLabel": "Uniunea Europeană",
       "summary": "The EU signed a free trade and strategic partnership agreement with Australia after 8 years of negotiations, driven by Trump's disruptive trade policies. The deal eliminates 98% of Australian export tariffs, includes defense and security cooperation, and represents the EU's awakening as a geopolitical actor building alternative partnership networks.",
       "talking_points": [
         "The EU-Australia trade deal was unblocked not by commercial revelation but by Trump turning the global economy into chaos, forcing cooperation",
@@ -1849,6 +1906,7 @@
       "color": "#3a86ff",
       "size": 5.8,
       "category": "European Union",
+      "categoryLabel": "Uniunea Europeană",
       "summary": "The article criticizes Romania's exclusion from core EU decision-making meetings, specifically a videoconference on European competitiveness convened by Germany's finance minister that included France, Poland, Spain, Italy, and the Netherlands but not Romania. It argues that Romania's irrelevance stems from chronic political instability, lack of structural reforms, and the failure of reformist leaders like PM Bolojan and President Nicușor Dan to break from old patterns of political compromise.",
       "talking_points": [
         "Romania was excluded from a key EU competitiveness meeting convened by Germany despite PM Bolojan being in Berlin the same day, highlighting the country's strategic irrelevance",
@@ -1888,6 +1946,7 @@
       "color": "#3a86ff",
       "size": 7.6,
       "category": "European Union",
+      "categoryLabel": "Uniunea Europeană",
       "summary": "Francis Fukuyama urges European allies not to capitulate to Donald Trump's tariff threats over Greenland, arguing that appeasement only emboldens him. He points out that countries like China, India, and Brazil successfully resisted Trump's pressure in 2025, and calls on Europe to unite and retaliate rather than offer concessions.",
       "talking_points": [
         "Trump's tariff threats against European countries over Greenland are serious and escalating, not mere posturing",
@@ -1920,6 +1979,7 @@
       "color": "#3a86ff",
       "size": 7.0,
       "category": "European Union",
+      "categoryLabel": "Uniunea Europeană",
       "summary": "A CATO Institute analysis argues that Europe can defend itself without the United States, countering NATO Secretary General Mark Rutte's claim that Europe is incapable of self-defense. The article highlights Europe's superior GDP, comparable military resources to Russia, and Russia's poor performance in Ukraine as evidence that European nations can deter Russian aggression independently.",
       "talking_points": [
         "NATO Secretary General Mark Rutte's claim that Europe cannot defend itself without the US is challenged as defeatist and unrealistic",
@@ -1953,6 +2013,7 @@
       "color": "#f5a623",
       "size": 7.0,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article criticizes Romania's governing coalition for imposing brutal tax increases on citizens—particularly property and vehicle taxes—without first reforming a corrupt and bloated public administration. Author Rodica Culcer argues that the coalition lacks moral authority, as it protects 'special' categories of citizens, tolerates PSD's destabilizing behavior, and forces ordinary taxpayers to bear the cost of systemic corruption and record deficits.",
       "talking_points": [
         "Property taxes increased far beyond the announced 70-80% due to revaluation grids and elimination of age-based deductions, with no corresponding administrative reform",
@@ -1991,6 +2052,7 @@
       "color": "#17c3b2",
       "size": 5.8,
       "category": "Geopolitics",
+      "categoryLabel": "Geopolitică",
       "summary": "The article traces the deep ideological roots of Eurasianism that underpin Russia's grand strategy and its war against Ukraine. It argues that the Kremlin's ambitions go far beyond kleptocracy, driven instead by a centuries-old geopolitical vision of Russia as a unique Eurasian civilization opposed to the West. The piece surveys key thinkers from Dostoevsky through pan-Slavists to neo-Eurasianists like Dugin, showing how this ideology shapes Putin's goal of reconstituting a vast Eurasian space.",
       "talking_points": [
         "Russia's war on Ukraine is driven not merely by kleptocratic greed but by a deep-rooted Eurasian geopolitical ideology seeking dominance over the former Soviet space",
@@ -2037,6 +2099,7 @@
       "color": "#f5a623",
       "size": 6.4,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article analyzes PSD's campaign to remove Prime Minister Ilie Bolojan from office, warning that political destabilization could lead to loss of EU funds, credit rating downgrades, and the rise of extremism. The author examines possible political scenarios including a no-confidence motion supported by AUR, and criticizes President Nicușor Dan for his vague stance on the crisis.",
       "talking_points": [
         "PSD's obsessive campaign to remove PM Bolojan threatens Romania's financial stability and EU fund absorption of 10 billion euros in grants due by August",
@@ -2073,6 +2136,7 @@
       "color": "#17c3b2",
       "size": 4.6,
       "category": "Geopolitics",
+      "categoryLabel": "Geopolitică",
       "summary": "On February 28, 2026, the US and Israel launched simultaneous large-scale military operations against Iran's nuclear sites, military infrastructure, and leadership, killing Ayatollah Khamenei. Iran retaliated with ballistic missiles targeting Israel and US bases, sending shockwaves across Gulf states and raising fears of a wider regional conflict and energy crisis.",
       "talking_points": [
         "The US ('Operation Epic Fury') and Israel ('Roaring Lion') conducted coordinated preemptive strikes on Iran's nuclear facilities, military command centers, and leadership, eliminating Ayatollah Khamenei",
@@ -2113,6 +2177,7 @@
       "color": "#17c3b2",
       "size": 7.0,
       "category": "Geopolitics",
+      "categoryLabel": "Geopolitică",
       "summary": "The article analyzes three possible scenarios for Greenland's future amid Trump's aggressive posturing toward the semi-autonomous Danish territory. The scenarios range from maintaining the status quo (most likely), to a peaceful American takeover with local consent, to an unprecedented hot conflict between Europe and the USA (least likely but no longer unthinkable).",
       "talking_points": [
         "Greenland is a quasi-independent territory with broad autonomy from Denmark, strategically positioned between American and European interests with growing Chinese economic interest",
@@ -2143,6 +2208,7 @@
       "color": "#f5a623",
       "size": 6.4,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article analyzes how Romanian ministers abuse Emergency Ordinances (OUG) to avoid personal legal responsibility, turning trivial administrative details into primary legislation. This 'fear of signature' mechanism dilutes individual ministerial accountability into collective government decisions, effectively bypassing Parliament and creating a vicious cycle of legislative dysfunction.",
       "talking_points": [
         "Ministers use Emergency Ordinances instead of ministerial orders to avoid personal legal liability, as OUGs are considered collective political acts protected from criminal prosecution",
@@ -2172,6 +2238,7 @@
       "color": "#17c3b2",
       "size": 4.6,
       "category": "Geopolitics",
+      "categoryLabel": "Geopolitică",
       "summary": "French historian Françoise Thom reveals deep connections between Jeffrey Epstein, his accomplice Ghislaine Maxwell's father Robert Maxwell, and Soviet/Russian power structures. The analysis explores how Epstein partnered with Kremlin-linked officials to evade Western sanctions, funnel Western elites to Russian intelligence, and potentially provided the FSB with compromising material on American elites through his sexual trafficking network.",
       "talking_points": [
         "Epstein maintained a direct partnership with Kremlin official Sergei Beliakov, an FSB academy graduate, who facilitated high-level Moscow meetings and visa arrangements",
@@ -2217,6 +2284,7 @@
       "color": "#3a86ff",
       "size": 4.6,
       "category": "European Union",
+      "categoryLabel": "Uniunea Europeană",
       "summary": "Romanian political scientist Cristian Preda shares observations from a research trip to France, describing the efficient public infrastructure, libraries, transportation, local food markets, and municipal elections in Paris and Normandy. He highlights the well-organized daily life, affordable flat-rate public transit, thriving regional industries, and participatory local democracy in small French communes.",
       "talking_points": [
         "French public libraries like Sainte-Geneviève maintain a culture of serious scholarship with strict but fair rules that foster continuous knowledge transmission",
@@ -2243,6 +2311,7 @@
       "color": "#f5a623",
       "size": 7.0,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article analyzes how PSD (Social Democratic Party) has lost its traditional electorate due to perceived corruption and elite opulence, while PNL and USR have isolated PSD within the governing coalition by firmly supporting Prime Minister Ilie Bolojan. Sociologist Barbu Mateescu explains that PSD's lost voters migrated to Călin Georgescu and AUR, as disillusioned citizens from neglected urban peripheries and rural areas reject PSD's material handouts in favor of anti-corruption messaging.",
       "talking_points": [
         "PSD has been isolated within the coalition after PNL and USR firmly backed PM Bolojan and rejected PSD's demands to replace him",
@@ -2280,6 +2349,7 @@
       "color": "#f5a623",
       "size": 6.4,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "Cristian Preda criticizes the dual plague of Romanian politics: the emphatic stupidity of sovereignist figures like Călin Georgescu, who speaks in mystical nonsense, and the aggressive insults from PSD politicians like Adrian Câciu and Victor Ponta. He argues that moderate, educated citizens are caught between these two forces and finds personal refuge in culture and intellectual life.",
       "talking_points": [
         "Călin Georgescu's nonsensical response about the US-Israel-Iran conflict reveals the depth of sovereignist absurdity in Romanian politics",
@@ -2315,6 +2385,7 @@
       "color": "#8899aa",
       "size": 5.2,
       "category": "Others",
+      "categoryLabel": "Altele",
       "summary": "The article examines the deliberate destruction of The Washington Post by Jeff Bezos as a symptom of a broader crisis in free press, drawing parallels with Romania's post-1990 media decline. The author argues that political capture of newsrooms, social media algorithms that amplify rage, and audience tribalization have eroded democratic discourse and eliminated reference media in both the US and Romania.",
       "talking_points": [
         "Jeff Bezos is deliberately undermining The Washington Post, a paper that once brought down President Nixon and exemplified press as the fourth estate",
@@ -2343,6 +2414,7 @@
       "color": "#3a86ff",
       "size": 7.0,
       "category": "European Union",
+      "categoryLabel": "Uniunea Europeană",
       "summary": "The article analyzes Ursula von der Leyen's controversial speech declaring Europe can no longer be the guardian of the old world order, drawing parallels with Stefan Zweig's 'The World of Yesterday' to argue that Europe must reinvent itself rather than cling to nostalgia or abandon its values. It critiques both von der Leyen's apparent willingness to discard values along with outdated forms, and her critics who defend abstract principles without proposing concrete solutions for a changed geopolitical reality.",
       "talking_points": [
         "Von der Leyen declared Europe can no longer guard the old world order and that EU unanimity in foreign policy is an obstacle to geopolitical credibility",
@@ -2384,6 +2456,7 @@
       "color": "#3a86ff",
       "size": 8.2,
       "category": "European Union",
+      "categoryLabel": "Uniunea Europeană",
       "summary": "The article analyzes how Trump's chaotic foreign policy inadvertently created an opportunity for EU federalization, as evidenced by Ursula von der Leyen's speech promoting European independence. It argues Europe must urgently pursue energy independence, new trade alliances (MERCOSUR, India, ASEAN countries), unified legislation, data protectionism, and security integration to become a truly independent geopolitical power.",
       "talking_points": [
         "Von der Leyen seized the opportunity created by Trump's erratic behavior to advance the EU federalization agenda, promoting European independence in energy, security, and technology",
@@ -2438,6 +2511,7 @@
       "color": "#f5a623",
       "size": 5.2,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article draws parallels between Romania's PSD party and Trump's MAGA movement, criticizing PSD leaders for eagerly meeting with Paolo Zampolli, a dubious Trump envoy, and for adopting destructive anti-European political tactics. It argues that PSD's campaign against PM Bolojan and its illiberal tendencies mirror Trump's scorched-earth approach, threatening Romania's EU credibility and democratic values.",
       "talking_points": [
         "PSD officials enthusiastically met with Paolo Zampolli, Trump's dubious 'special envoy for global partnerships,' who has ties to Jeffrey Epstein and questionable business dealings",
@@ -2490,6 +2564,7 @@
       "color": "#f5a623",
       "size": 5.8,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article analyzes PSD's assault on Prime Minister Bolojan as part of a broader system of political spoliation maintained since 1989, now facing bankruptcy. It argues that PSD's double game of agreeing to corrective budget measures while publicly opposing them threatens Romania's OECD accession and international credibility, while extremist parties like AUR serve as controlled opposition created by intelligence services.",
       "talking_points": [
         "PSD, AUR, and intelligence services form an integrated system designed to maintain a post-1989 regime of privileges and undeserved spoliation now approaching collapse",
@@ -2526,6 +2601,7 @@
       "color": "#3a86ff",
       "size": 7.0,
       "category": "European Union",
+      "categoryLabel": "Uniunea Europeană",
       "summary": "The article argues that Europe's strength lies in its 2,000-year-old cultural and democratic heritage, rooted in Greek and Roman civilization. Facing a new world order marked by authoritarian leaders in Russia, America, and China, the author contends that small countries like Romania can only thrive through EU unity, and calls for a European army and an executive EU presidency to respond rapidly to crises.",
       "talking_points": [
         "The world has undergone a deep, permanent, and systemic rupture since 2020, not merely a transition",
@@ -2559,6 +2635,7 @@
       "color": "#f5a623",
       "size": 5.2,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "Romania has completely stopped importing COVID-19 vaccines, becoming the only EU country where vaccination against COVID-19 is unavailable to the population. Despite ongoing infections and deaths, the anti-vaccine movement fueled by sovereignist politicians has also caused measles vaccination rates to drop to 47.4%, leading to a declared national epidemic with 30 deaths between 2023-2025.",
       "talking_points": [
         "Romania is the only EU member state where COVID-19 vaccination is completely unavailable to the public, with the government ceasing vaccine imports",
@@ -2588,6 +2665,7 @@
       "color": "#e84855",
       "size": 5.8,
       "category": "Ukraine/Russia",
+      "categoryLabel": "Ucraina / Rusia",
       "summary": "The article argues that Ukraine's resistance against Russia has significantly weakened Moscow's ability to support its allies globally, particularly Iran. It suggests that Trump's aerial campaign against Iran was only possible because Russia, exhausted by the war in Ukraine, can no longer project power or assist Tehran, while China quietly benefits from Russia's economic depletion.",
       "talking_points": [
         "Ukraine's resistance has trapped Putin in his own chaos strategy, paralyzing Russia's global military and diplomatic reach",
@@ -2625,6 +2703,7 @@
       "color": "#f5a623",
       "size": 4.6,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "A Romanian medical student near graduation describes the systemic failures of Romania's healthcare and medical education system, including nepotism in hiring, inadequate residency training, poor pay, and brain drain. The author proposes concrete reforms such as transparent national hiring competitions, better pay for residents, and facilitating diploma equivalence for doctors trained abroad.",
       "talking_points": [
         "Medical residency positions in major Romanian cities are effectively reserved through nepotism and connections, leaving qualified graduates without fair access",
@@ -2650,6 +2729,7 @@
       "color": "#f5a623",
       "size": 5.2,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article criticizes the manufactured outrage by self-proclaimed 'patriots' over President Nicușor Dan's military plane being delayed at Paris Bourget airport due to weather conditions. A pseudo-journalist falsely claimed Swiss F-16s intercepted the presidential flight rather than escorting it as a gesture of gratitude, forcing Dan to release air traffic control recordings to counter disinformation. The author argues this fake patriotic hysteria overshadowed the actual purpose of the Paris trip — supporting Ukraine.",
       "talking_points": [
         "Weather delays at Bourget airport were exploited by nationalist voices to manufacture a fake scandal about presidential dignity",
@@ -2685,6 +2765,7 @@
       "color": "#17c3b2",
       "size": 7.6,
       "category": "Geopolitics",
+      "categoryLabel": "Geopolitică",
       "summary": "The article analyzes the emerging multipolar world order, declared effectively dead at the 2026 Munich Security Conference. It examines how major powers — the US, Russia, China, and the EU — are reconfiguring their spheres of influence through energy politics, military positioning, and economic expansion, while Europe struggles to define its strategic role in this new era.",
       "talking_points": [
         "The post-1945 world order has been declared dead by major leaders at the Munich Security Conference, with Merz, Macron, and Rubio all acknowledging a new geopolitical era",
@@ -2722,6 +2803,7 @@
       "color": "#17c3b2",
       "size": 6.4,
       "category": "Geopolitics",
+      "categoryLabel": "Geopolitică",
       "summary": "The article reviews Anne Applebaum's recent works on 'Autocracy 2.0' – hybrid regimes that maintain democratic facades while functioning as soft dictatorships, leveraging digital technologies and social media. It examines how autocratic states (China, Iran, Belarus, North Korea) collaborate to support Russia's war in Ukraine, forming an 'Axis of Autocrats' that threatens the post-1945 international order. Applebaum calls for a democratic coalition of civic activists and governments to counter authoritarian cooperation.",
       "talking_points": [
         "Autocracy 2.0 regimes maintain democratic appearances through facade elections and controlled media while functioning as soft dictatorships",
@@ -2761,6 +2843,7 @@
       "color": "#3a86ff",
       "size": 7.0,
       "category": "European Union",
+      "categoryLabel": "Uniunea Europeană",
       "summary": "The article examines Hungary's obstructionist role within the EU, tracing Viktor Orbán's pro-Russian, Eurasian-oriented foreign policy back to Hungary's historical revisionism rooted in the Treaty of Trianon. It analyzes how Orbán has positioned Hungary at the intersection of Trumpism, Putinism, and Sinophilia, while upcoming elections could see the opposition TISZA party led by Péter Magyar challenge his grip on power.",
       "talking_points": [
         "Hungary blocked the EU's €90 billion loan to Ukraine at the March 2026 European Council, demanding Russian oil supplies as a precondition",
@@ -2803,6 +2886,7 @@
       "color": "#17c3b2",
       "size": 4.6,
       "category": "Geopolitics",
+      "categoryLabel": "Geopolitică",
       "summary": "The article traces the Strait of Hormuz from its ancient Persian origins through colonial conquests to the 2026 crisis, when US-Israeli strikes on Iran triggered a de facto blockade that collapsed global shipping insurance and spiked oil prices. Iran selectively allowed passage only to 'friendly' nations (China, Russia, India), reinventing medieval toll-gate practices and exposing the fragility of global supply chains far beyond oil—including fertilizers, aluminum, and helium.",
       "talking_points": [
         "The Strait of Hormuz is not just an oil chokepoint but the critical artery for global fertilizer, aluminum, helium, and petrochemical supply chains with no alternative pipeline infrastructure",
@@ -2853,6 +2937,7 @@
       "color": "#f5a623",
       "size": 5.2,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article distinguishes between Orthodox Christianity (ortodoxia) and its political instrumentalization (ortodoxismul), arguing that Romanian politicians weaponize religious identity to promote exclusionary nationalism. Drawing parallels between national-Christianity and national-socialism, the author warns that Orthodox symbols are being co-opted to discriminate against non-Orthodox Romanians and to deliver masked political messages under theological guise.",
       "talking_points": [
         "Orthodoxy as authentic Eastern Christian practice must be distinguished from 'orthodoxism' — its cynical political instrumentalization stripped of ethics and morality",
@@ -2882,6 +2967,7 @@
       "color": "#f5a623",
       "size": 5.8,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article compiles diverse opinions on Romanian President Nicușor Dan's decision to attend Donald Trump's Board of Peace summit in Washington as an observer. Analysts debate whether this was a pragmatic move driven by national security interests or a misguided step that places Romania in embarrassing company alongside Hungary's Viktor Orbán. The discussion touches on Romania's lack of preparedness for concrete peacekeeping contributions and the broader tension between realism and moral principles in foreign policy.",
       "talking_points": [
         "Romania's geographic proximity to the Ukraine war theater and dependence on US military infrastructure (Deveselu shield, American troops) justify pragmatic engagement with the Trump administration",
@@ -2941,6 +3027,7 @@
       "color": "#f5a623",
       "size": 5.8,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "Cristian Preda critiques PSD leader Sorin Grindeanu's proposal for a new internal party consultation, arguing the questions PSD poses resemble those of an opposition party despite being in government. Preda proposes four alternative questions he considers more important for Romanian citizens, challenging PSD's nearly 14-year grip on governance and Grindeanu's controversial political record.",
       "talking_points": [
         "PSD launched a new internal consultation before finishing the previous one announced in December, revealing organizational dysfunction",
@@ -2972,6 +3059,7 @@
       "color": "#f5a623",
       "size": 5.2,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article critiques Romania's National Liberal Party (PNL) for abandoning fiscal conservatism under the Iohannis-Ciucă leadership, adopting socialist-style spending while maintaining poor tax collection. It argues Romania has created an unsustainable hybrid model with Scandinavian-level social spending on a developing-country revenue base, risking a Greek-style sovereign debt crisis.",
       "talking_points": [
         "PNL transformed from a fiscally conservative party into a vehicle for budgetary populism under the Iohannis-Ciucă tandem",
@@ -3003,6 +3091,7 @@
       "color": "#f5a623",
       "size": 7.6,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article criticizes Romania's diplomatic delegation to Washington, led by Foreign Minister Oana Toiu and including controversial figure Titus Corlățean, arguing that Romania's foreign policy is outdated and naively aligned with a declining MAGA movement. The author contends that Romania should pivot toward European partnerships rather than clinging to a US strategic partnership that effectively no longer exists under the current administration, while also criticizing President Nicușor Dan's lack of leadership and transparency regarding foreign interference in Romanian elections.",
       "talking_points": [
         "Romania's Washington delegation is pursuing an outdated diplomatic strategy by courting MAGA figures who will soon become a historical mistake",
@@ -3043,6 +3132,7 @@
       "color": "#3a86ff",
       "size": 5.2,
       "category": "European Union",
+      "categoryLabel": "Uniunea Europeană",
       "summary": "Bulgarian President Rumen Radev resigned in January 2026 to enter active politics, leaving the country in an institutional vacuum while it paradoxically achieves strategic goals like eurozone accession. His departure triggered intense polarization, with supporters seeing him as a patriotic reformer and critics viewing him as another oligarchic figure disguised in anti-corruption rhetoric.",
       "talking_points": [
         "Bulgaria operates on 'autopilot' without an approved budget, with a caretaker government, and key institutional pillars either decapitated or delegitimized",
@@ -3074,6 +3164,7 @@
       "color": "#f5a623",
       "size": 6.4,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "Former coalition participant Ionuț Moșteanu argues that the institutionalization of weekly coalition meetings undermines effective governance. He contends that once a prime minister and cabinet receive parliamentary investiture, party leaders should not micromanage executive decisions, and cites the 2021 Anghel Saligny program under Florin Cîțu as an example of poor coalition-driven fiscal decisions.",
       "talking_points": [
         "Weekly coalition leadership meetings create a para-constitutional decision-making body that lacks executive mandate",
@@ -3102,6 +3193,7 @@
       "color": "#44bd6e",
       "size": 5.2,
       "category": "USA",
+      "categoryLabel": "SUA",
       "summary": "Francis Fukuyama analyzes Trump's limited 'nation building' strategy in Venezuela, arguing that his purely extractive approach focused on oil wealth cannot succeed without establishing a legitimate democratic government. Drawing parallels to failed U.S. interventions in Afghanistan and Iraq, Fukuyama contends that even minimal objectives like restoring oil production require political stability, democratic legitimacy, and the return of millions of Venezuelan emigrants.",
       "talking_points": [
         "Trump's Venezuela strategy is cynically limited to extracting oil wealth while ignoring democratic restoration, sending a dangerous signal of old-fashioned imperialism",
@@ -3142,6 +3234,7 @@
       "color": "#17c3b2",
       "size": 5.8,
       "category": "Geopolitics",
+      "categoryLabel": "Geopolitică",
       "summary": "The article traces Iran's democratic traditions from the 1905 Constitutional Revolution through the Mosaddegh era, arguing that the 1953 CIA-MI6 coup destroyed secular opposition and paved the way for theocracy. The author watches current Iranian protests with hope that the country might recover its interrupted constitutional and parliamentary heritage rather than settle for monarchy or softened Islamism.",
       "talking_points": [
         "Iran had a genuine constitutional and parliamentary tradition dating back to 1905-1911, with rule of law concepts, civil rights, and separation of powers",
@@ -3174,6 +3267,7 @@
       "color": "#f5a623",
       "size": 6.4,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article analyzes whether Romania's reformist camp has reason for optimism after the Bolojan government reduced the financial deficit beyond targets. It argues that PSD systematically sabotages reform efforts, blocks fiscal adjustment measures, and sustains a corrupt 'conglomerate' of political factions, secret services, and judiciary elements that threatens Romania's European future.",
       "talking_points": [
         "The Bolojan government's deficit reduction to 7.7% (vs planned 8.4%) sparked cautious optimism among pro-European reformists",
@@ -3213,6 +3307,7 @@
       "color": "#f5a623",
       "size": 5.2,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article analyzes why Putin's model of governance is attractive to Romanian intelligence officers, based on insights from Russia expert Armand Goșu. It argues that Russian intelligence services under Putin achieved a historical first by capturing the state entirely, and Romanian secret service officers envy this status rather than adhering to any ideological alignment with Russia.",
       "talking_points": [
         "Under Putin, Russian intelligence services achieved an unprecedented historical shift from being servants of the state to becoming owners of the state",
@@ -3241,6 +3336,7 @@
       "color": "#f5a623",
       "size": 5.2,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article argues that Romanian democracy is endangered because corrupt political forces unite effectively (absolute evil) while well-intentioned citizens remain divided by their own critical standards (relative good). The author identifies lack of education and critical thinking as the root cause of vulnerability to propaganda, referencing the 2024 presidential election social media manipulation, and proposes USR as a potential reformist solution before the 2028 elections.",
       "talking_points": [
         "Romanian democracy is threatened by united corrupt political forces that exploit poor education and emotional manipulation of neglected populations",
@@ -3267,6 +3363,7 @@
       "color": "#f5a623",
       "size": 6.4,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "Cristian Preda argues that Romania's most severe recession is political, not economic. The governing coalition is paralyzed by internal disputes, delayed appointments, and tax increases, while President Nicușor Dan risks repeating Klaus Iohannis's pattern of indolence and disconnection from voters.",
       "talking_points": [
         "The economic recession debate is a distraction from the deeper political recession undermining Romanian democracy",
@@ -3302,6 +3399,7 @@
       "color": "#b07cd8",
       "size": 4.6,
       "category": "History",
+      "categoryLabel": "Istorie",
       "summary": "The article examines how contemporary Moldovan writers process Soviet-era trauma through literature, focusing on identity recovery and collective memory. It analyzes works by authors like Vladimir Beșleagă, Emilian Galaicu-Păun, and Dumitru Crudu, who explore linguistic, ethnic, and social identity struggles under the Soviet system. Their prose transforms personal and collective memories of totalitarianism into a literature of post-totalitarian recovery.",
       "talking_points": [
         "Contemporary Moldovan novelists continue to thematize the struggle for linguistic, social, and ethnic identity within the Soviet system, forming a literature of post-totalitarian recovery",
@@ -3340,6 +3438,7 @@
       "color": "#ff7b3a",
       "size": 4.6,
       "category": "Economics",
+      "categoryLabel": "Economie",
       "summary": "An interview with economist Stefan Kolev about the history of the Mont Pèlerin Society (MPS), tracing its origins from the 1938 Walter Lippmann Colloquium through its 1947 founding, and examining how liberal intellectuals sought to reinvent liberalism after its perceived failures in the 1930s. The article explores internal ideological tensions between neoliberals and paleo-liberals, the society's shift toward American-style economics under Friedman's generation, and whether a similar intellectual revival could happen today.",
       "talking_points": [
         "The Mont Pèlerin Society and the Walter Lippmann Colloquium were critical responses to liberalism's perceived failure in the 1930s, gathering roughly 50% of all self-declared liberal intellectuals of that era",
@@ -3385,6 +3484,7 @@
       "color": "#f5a623",
       "size": 7.0,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article criticizes PSD Justice Minister Radu Marinescu's controversial nominations for top prosecutor positions, particularly Cristina Chiriac for Prosecutor General, who has a record of hiding evidence and failing to finalize corruption cases. It questions whether President Nicușor Dan will have the political courage to reject these nominations, arguing that as an independent president without solid parliamentary support, he is effectively captive to the entrenched political system.",
       "talking_points": [
         "Justice Minister Marinescu strategically mixed scandalous and acceptable nominations to push politically obedient prosecutors into top positions",
@@ -3426,6 +3526,7 @@
       "color": "#f5a623",
       "size": 5.2,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article defends Prime Minister Bolojan's budget adjustment policies against two types of criticism: those who say austerity is unnecessary and those who advocate for spending cuts paired with tax reductions. Using macroeconomic data from 2015-2024, the author argues that Romania's unsustainable growth model based on low taxes and high spending had to end, and that the current modest consumption reduction is a small price to pay compared to a Greek-style crisis.",
       "talking_points": [
         "Romania's 2015-2024 economic model of low taxes and high spending created an unsustainable fiscal deficit reaching 9.3% of GDP in 2024",
@@ -3457,6 +3558,7 @@
       "color": "#f5a623",
       "size": 6.4,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article discusses the possibility of a third presidential suspension in Romania, triggered by a legal challenge from AUR lawyer Uscov against Constitutional Court judge Dacian Dragoș's qualifications. Author Cristian Preda argues that Dragoș's legal teaching experience at a political science faculty fully qualifies as 'higher legal education,' and warns that AUR leader Simion is using this legal maneuver as a stepping stone to suspend President Nicușor Dan.",
       "talking_points": [
         "AUR lawyer Uscov challenged CCR judge Dacian Dragoș's appointment, claiming his teaching experience in a political science faculty doesn't count as legal education",
@@ -3489,6 +3591,7 @@
       "color": "#f5a623",
       "size": 5.8,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "Political scientist Cristian Preda critiques the chronic dysfunction in Romania's education system, centered on the 14-year tenure of state secretary Gigel Paraschiv, who symbolizes institutional tolerance of rector power abuses and plagiarism. Preda argues that PM Bolojan's government has started poorly on education reform, appointing compromised figures to key advisory positions.",
       "talking_points": [
         "Gigel Paraschiv has served as state secretary for education for nearly 14 years continuously, enabling rector abuses and plagiarism",
@@ -3522,6 +3625,7 @@
       "color": "#f5a623",
       "size": 5.8,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article analyzes how Romanian presidents have historically positioned themselves when forced into coalitions with political adversaries, coining it 'the immoral solution.' It critiques current President Nicușor Dan for failing to maintain political independence from PSD, contrasting his passive neutrality with Băsescu's transparent self-criticism and Iohannis's initial anti-PSD stance.",
       "talking_points": [
         "Băsescu coined the 'immoral solution' in 2004 to transparently acknowledge his uncomfortable coalition with PUR/Dan Voiculescu's party, maintaining voter trust through honesty",
@@ -3559,6 +3663,7 @@
       "color": "#ff7b3a",
       "size": 4.6,
       "category": "Economics",
+      "categoryLabel": "Economie",
       "summary": "The article criticizes Romania's agricultural subsidy system, which rewards land ownership rather than actual production, allowing landowners to collect EU funds without generating any agricultural output. It argues for raising eligibility thresholds, investing in food processing infrastructure, replacing post-disaster compensation with insurance systems, and fiscalizing EU funds above €5,000 to ensure accountability and competitiveness.",
       "talking_points": [
         "Romania's per-hectare subsidy system rewards land ownership equally whether the land produces crops or weeds, undermining productive farmers",
@@ -3585,6 +3690,7 @@
       "color": "#f5a623",
       "size": 6.4,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "A satirical commentary on Romanian President Nicușor Dan's attendance at Donald Trump's first Board of Peace meeting, where Trump called Romanians 'fantastic' while mistakenly referring to Dan as prime minister. The article mocks various Romanian political factions' reactions to the event, from sovereignists claiming the gaffe was intentional, to enthusiastic supporters celebrating improved US-Romania relations, to critics concerned about Romania distancing itself from European allies.",
       "talking_points": [
         "Trump called Nicușor Dan 'fantastic' but mistakenly referred to him as prime minister, sparking varied reactions across Romania's political spectrum",
@@ -3624,6 +3730,7 @@
       "color": "#f5a623",
       "size": 7.0,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article draws parallels between Romania's current security situation and the precarious position it faced in 1939-1940, when its alliance system collapsed rapidly. It warns that US support under MAGA/Trump is unreliable and urges President Nicușor Dan to keep Romania firmly aligned with European allies rather than drifting toward the MAGA-Putin axis.",
       "talking_points": [
         "Romania's current security situation is compared to 1939, when the country had firm British and French guarantees that quickly proved worthless after Poland and France fell",
@@ -3667,6 +3774,7 @@
       "color": "#b07cd8",
       "size": 4.6,
       "category": "History",
+      "categoryLabel": "Istorie",
       "summary": "The article examines Romania's decision under Ceaușescu to rapidly pay off its entire external debt between 1981 and 1989, analyzing the severe economic and social costs imposed on the population. While the debt was formally eliminated by April 1989, the forced austerity—food rationing, energy cuts, import restrictions—eroded living standards, technological capacity, and regime legitimacy, ultimately contributing to the 1989 revolution.",
       "talking_points": [
         "Romania's external debt grew rapidly in the late 1970s due to energy-intensive socialist industrialization and reliance on imported technology, reaching over 10 billion USD by 1981",
@@ -3692,6 +3800,7 @@
       "color": "#f5a623",
       "size": 7.0,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The article criticizes Romanian President Nicușor Dan for his lack of foreign policy expertise, his absence from the Davos Economic Forum, and his ambiguous positioning between the US and EU on issues like Greenland and trade tariffs. Author Rodica Culcer argues that Dan's presidential advisor Marius Lazurcă attempts to justify contradictory diplomatic positions, particularly the claim that Romania is 'solidary with both antagonistic positions' of the US and EU.",
       "talking_points": [
         "Nicușor Dan's absence from Davos is symptomatic of Romania's diplomatic irrelevance, not a strategic choice",
@@ -3729,6 +3838,7 @@
       "color": "#17c3b2",
       "size": 5.8,
       "category": "Geopolitics",
+      "categoryLabel": "Geopolitică",
       "summary": "The article argues that political decisions in Romania, the US, and partly the EU are not driven by strategic vision but by absolute confusion and short-term instincts. It criticizes Romania's hesitation to join France's nuclear deterrence initiative, the chaotic Romanian coalition politics, and the US military strikes on Iran conducted without congressional authorization or clear objectives.",
       "talking_points": [
         "Romanian coalition politics are driven by petty electoral advantages rather than strategic governance or addressing the budget deficit",
@@ -3772,6 +3882,7 @@
       "color": "#17c3b2",
       "size": 8.2,
       "category": "Geopolitics",
+      "categoryLabel": "Geopolitică",
       "summary": "The article argues that NATO has become a 'paper tiger' as Trump himself declared, and that Europe must shift its paradigm to view the US as a geopolitical rival rather than a protector. The author contends that whether Europe intervenes in the Strait of Hormuz crisis or not, it must do so for the right reasons—building autonomous security, energy, and military capabilities rather than clinging to an outdated transatlantic framework.",
       "talking_points": [
         "NATO was always transactional—the US provided security in exchange for political solidarity and recognition of American geopolitical supremacy, but this strategic convergence no longer exists",
@@ -3809,6 +3920,7 @@
       "color": "#44bd6e",
       "size": 4.6,
       "category": "USA",
+      "categoryLabel": "SUA",
       "summary": "The article debunks Trump's repeated claim of having ended eight wars, analyzing each supposed conflict resolution (Thailand-Cambodia, Kosovo-Serbia, India-Pakistan, Egypt-Ethiopia, Congo-Rwanda) and showing they were either trivial, pre-existing, or illusory. The author argues Trump's behavior reflects narcissistic personality traits worsened by cognitive decline, comparing his shameless overcompensation to the dignified confusion of ordinary people facing dementia.",
       "talking_points": [
         "Trump's claim of ending eight wars is systematically debunked - most were minor skirmishes, pre-existing resolutions, or fabricated peace deals",
@@ -3853,6 +3965,7 @@
       "color": "#3a86ff",
       "size": 8.2,
       "category": "European Union",
+      "categoryLabel": "Uniunea Europeană",
       "summary": "The article argues that Trump's illegal intervention in Venezuela signals the collapse of the post-WWII international order, effectively giving Russia and China a green light to pursue their own spheres of influence. The author makes an urgent case for European federalization, arguing that only a united EU with a federal government can survive in a world where the US, Russia, and China all threaten European interests.",
       "talking_points": [
         "Trump's intervention in Venezuela mirrors 19th-century colonial behavior and undermines the rules-based international order, emboldening Russia and China",
@@ -3889,6 +4002,7 @@
       "color": "#e84855",
       "size": 5.2,
       "category": "Ukraine/Russia",
+      "categoryLabel": "Ucraina / Rusia",
       "summary": "The article argues that Ukraine's Europeanization has evolved from a diplomatic project into an existential survival mechanism against Russian imperial revisionism. It traces Ukraine's European trajectory from the Orange Revolution through the 2022 invasion, showing how war transformed EU integration from a policy goal into a component of national resilience, with over 170 billion euros mobilized by the EU between 2022-2025 and public support for EU membership reaching 85.5%.",
       "talking_points": [
         "Ukraine's EU integration is not an emotional wartime reaction but a historical return to a cultural and political space it has always partially belonged to",
@@ -3917,6 +4031,7 @@
       "color": "#f5a623",
       "size": 6.4,
       "category": "Romania Politics",
+      "categoryLabel": "Politică România",
       "summary": "The author, an education advocate, reflects on the eve of a new education minister's appointment, criticizing the coalition's failed reforms and rector-dominated negotiations that ignored pre-university education. She calls for depoliticization of education and a meaningful Education Pact backed by an independent mechanism with real experts.",
       "talking_points": [
         "The coalition's education negotiations were dominated by university rectors seeking more autonomy, while pre-university education was ignored",
@@ -7300,6 +7415,16 @@
       "Economics": "#ff7b3a",
       "Geopolitics": "#17c3b2",
       "Others": "#8899aa"
+    },
+    "categoryLabels": {
+      "Ukraine/Russia": "Ucraina / Rusia",
+      "Romania Politics": "Politică România",
+      "USA": "SUA",
+      "European Union": "Uniunea Europeană",
+      "History": "Istorie",
+      "Economics": "Economie",
+      "Geopolitics": "Geopolitică",
+      "Others": "Altele"
     }
   }
 }

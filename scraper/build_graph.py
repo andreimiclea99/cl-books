@@ -23,6 +23,18 @@ CATEGORY_COLORS = {
     "Others": "#8899aa",
 }
 
+# Romanian display names
+CATEGORY_LABELS = {
+    "Ukraine/Russia": "Ucraina / Rusia",
+    "Romania Politics": "Politică România",
+    "USA": "SUA",
+    "European Union": "Uniunea Europeană",
+    "History": "Istorie",
+    "Economics": "Economie",
+    "Geopolitics": "Geopolitică",
+    "Others": "Altele",
+}
+
 # Minimum co-occurrence count to create a concept-concept edge
 MIN_COOCCURRENCE = 2
 # Minimum mentions to include a concept node
@@ -99,10 +111,11 @@ def build_graph(extractions: list) -> dict:
         node_id = f"cat:{cat}"
         nodes.append({
             "id": node_id,
-            "label": cat,
+            "label": CATEGORY_LABELS.get(cat, cat),
             "type": "category",
             "color": color,
             "size": 30,
+            "catKey": cat,
         })
         node_ids.add(node_id)
 
@@ -143,6 +156,7 @@ def build_graph(extractions: list) -> dict:
             "color": color,
             "size": 8,
             "category": cat,
+            "categoryLabel": CATEGORY_LABELS.get(cat, cat),
             "summary": ext.get("summary", ""),
             "talking_points": ext.get("talking_points", []),
             "author": ext.get("author", ""),
@@ -250,6 +264,7 @@ def build_graph(extractions: list) -> dict:
             "totalEdges": len(edges),
             "categories": list(CATEGORY_COLORS.keys()),
             "categoryColors": CATEGORY_COLORS,
+            "categoryLabels": CATEGORY_LABELS,
         },
     }
 
