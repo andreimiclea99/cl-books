@@ -722,8 +722,9 @@
     if (!graph.hasNode(edge.source) || !graph.hasNode(edge.target)) return;
     try {
       graph.addEdge(edge.source, edge.target, {
-        size: Math.max(0.4, (edge.weight || 0.5) * 0.7),
-        color: edge.color ? (edge.color + '40') : 'rgba(100,110,130,0.15)',
+        size: Math.max(0.3, (edge.weight || 0.5) * 0.5),
+        color: edge.color ? (edge.color + '28') : 'rgba(100,110,130,0.10)',
+        type: 'curve',
         _type: edge.type,
         _baseColor: edge.color || '#556677',
       });
@@ -735,14 +736,14 @@
   // ── Layout ──
   const sensibleSettings = forceAtlas2.inferSettings(graph);
   forceAtlas2.assign(graph, {
-    iterations: 600,
+    iterations: 800,
     settings: {
       ...sensibleSettings,
-      gravity: 0.08,
-      scalingRatio: 10,
+      gravity: 0.02,
+      scalingRatio: 40,
       barnesHutOptimize: true,
-      barnesHutTheta: 0.5,
-      slowDown: 3,
+      barnesHutTheta: 0.4,
+      slowDown: 5,
       strongGravityMode: false,
       adjustSizes: true,
     },
@@ -757,14 +758,15 @@
     labelSize: 12,
     labelColor: { color: '#a0a5b0' },
     labelRenderedSizeThreshold: 6,
-    defaultEdgeColor: 'rgba(100,110,130,0.15)',
+    defaultEdgeColor: 'rgba(100,110,130,0.12)',
+    defaultEdgeType: 'curve',
     defaultNodeColor: '#555',
     minCameraRatio: 0.03,
     maxCameraRatio: 10,
     labelFont: '"IBM Plex Sans", sans-serif',
     stagePadding: 60,
-    labelDensity: 0.12,
-    labelGridCellSize: 120,
+    labelDensity: 0.08,
+    labelGridCellSize: 150,
   });
 
   loadingFill.style.width = '100%';

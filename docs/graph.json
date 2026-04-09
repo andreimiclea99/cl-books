@@ -5,7 +5,7 @@
       "label": "Ucraina / Rusia",
       "type": "category",
       "color": "#e84855",
-      "size": 40.0,
+      "size": 30,
       "catKey": "Ukraine/Russia",
       "articleCount": 0
     },
@@ -14,7 +14,7 @@
       "label": "Politică România",
       "type": "category",
       "color": "#f5a623",
-      "size": 40.0,
+      "size": 30,
       "catKey": "Romania Politics",
       "articleCount": 0
     },
@@ -23,7 +23,7 @@
       "label": "SUA",
       "type": "category",
       "color": "#44bd6e",
-      "size": 40.0,
+      "size": 30,
       "catKey": "USA",
       "articleCount": 0
     },
@@ -32,7 +32,7 @@
       "label": "Uniunea Europeană",
       "type": "category",
       "color": "#3a86ff",
-      "size": 40.0,
+      "size": 30,
       "catKey": "European Union",
       "articleCount": 0
     },
@@ -41,7 +41,7 @@
       "label": "Istorie",
       "type": "category",
       "color": "#b07cd8",
-      "size": 40.0,
+      "size": 30,
       "catKey": "History",
       "articleCount": 0
     },
@@ -50,7 +50,7 @@
       "label": "Economie",
       "type": "category",
       "color": "#ff7b3a",
-      "size": 40.0,
+      "size": 30,
       "catKey": "Economics",
       "articleCount": 0
     },
@@ -59,7 +59,7 @@
       "label": "Geopolitică",
       "type": "category",
       "color": "#17c3b2",
-      "size": 40.0,
+      "size": 30,
       "catKey": "Geopolitics",
       "articleCount": 0
     },
@@ -68,13 +68,13 @@
       "label": "Altele",
       "type": "category",
       "color": "#8899aa",
-      "size": 40.0,
+      "size": 30,
       "catKey": "Others",
       "articleCount": 0
     },
     {
       "id": "article:a-fost-ceausescu-un-patriot",
-      "label": "A fost Ceaușescu un patriot?",
+      "label": "“A fost Ceaușescu un patriot?”",
       "type": "article",
       "color": "#f5a623",
       "size": 5.2,
@@ -140,7 +140,7 @@
     },
     {
       "id": "article:antreprenor-pe-banii-tai-statul-roman-vrea-sa-produca-apa-minerala-dacia",
-      "label": "Entrepreneur on Your Money: The Romanian State Wants to Produce 'Dacia' Mineral Water",
+      "label": "Antreprenor pe banii tăi: statul român vrea să producă apa minerală „Dacia”",
       "type": "article",
       "color": "#f5a623",
       "size": 4.6,
@@ -164,7 +164,7 @@
     },
     {
       "id": "article:antreprenorul-roman-cel-mai-prost-investitor",
-      "label": "The Romanian Entrepreneur – The Worst Investor",
+      "label": "Antreprenorul român – cel mai prost investitor",
       "type": "article",
       "color": "#f5a623",
       "size": 5.2,
@@ -190,7 +190,7 @@
     },
     {
       "id": "article:anul-in-care-la-davos-nu-s-a-mai-zambit-steril",
-      "label": "The Year Davos Stopped Smiling Sterile",
+      "label": "Anul în care la Davos nu s-a mai zâmbit steril",
       "type": "article",
       "color": "#3a86ff",
       "size": 7.0,
@@ -223,7 +223,7 @@
     },
     {
       "id": "article:apogeul-inadecvarii-premierul-nicusor-dan-la-consiliul-pentru-pace",
-      "label": "Apogeul inadecvării – 'premierul' Nicușor Dan la Consiliul pentru Pace",
+      "label": "Apogeul inadecvării – “premierul” Nicușor Dan la Consiliul pentru Pace",
       "type": "article",
       "color": "#f5a623",
       "size": 6.4,
@@ -271,7 +271,7 @@
     },
     {
       "id": "article:ascensiunea-oligarhiei-necropolitice-o-provocare-globala",
-      "label": "The Rise of Necropolitical Oligarchy – A Global Challenge",
+      "label": "Ascensiunea oligarhiei necropolitice – o provocare globală",
       "type": "article",
       "color": "#17c3b2",
       "size": 7.6,
@@ -337,7 +337,7 @@
     },
     {
       "id": "article:brian-brown-activistul-american-pro-life-prietenul-politicienilor-de-aur-din-romania-si-al-rusiei",
-      "label": "Brian Brown, the American pro-life activist, friend of AUR politicians in Romania and of Russia",
+      "label": "Brian Brown, activistul american pro-life, prietenul politicienilor de AUR din România și al Rusiei",
       "type": "article",
       "color": "#f5a623",
       "size": 5.2,
@@ -492,7 +492,7 @@
     },
     {
       "id": "article:cat-ii-se-rupe-lui-ilie-bolojan-ca-unii-isi-rup-diplomele",
-      "label": "How Much Does Ilie Bolojan Care That Some Are Tearing Up Their Diplomas?",
+      "label": "Cât îi se rupe lui Ilie Bolojan că unii își rup diplomele?",
       "type": "article",
       "color": "#f5a623",
       "size": 5.2,
@@ -726,7 +726,7 @@
     },
     {
       "id": "article:ce-este-cu-adevarat-civilizatia-occidentala",
-      "label": "What is truly 'Western civilization'?",
+      "label": "Ce este cu adevărat „civilizația occidentală”?",
       "type": "article",
       "color": "#17c3b2",
       "size": 5.8,
@@ -879,7 +879,7 @@
     },
     {
       "id": "article:ce-se-intampla-pana-la-urma-cu-cele-231-de-milioane-de-euro",
-      "label": "What is happening with the 231 million euros?",
+      "label": "Ce se întâmplă până la urmă cu cele 231 de milioane de euro?",
       "type": "article",
       "color": "#3a86ff",
       "size": 4.6,
@@ -911,7 +911,7 @@
     },
     {
       "id": "article:ciudatul-caz-trafic-de-influenta-din-cv-ul-candidatului-voineag-intoxicare-sau-kompromat-la-dna",
-      "label": "The Strange Case of 'Influence Peddling' in Candidate Voineag's Resume: Intoxication or Kompromat at DNA?",
+      "label": "Ciudatul caz “Trafic de influență” din CV-ul candidatului Voineag. Intoxicare sau Kompromat la DNA?",
       "type": "article",
       "color": "#f5a623",
       "size": 4.6,
@@ -946,7 +946,7 @@
     },
     {
       "id": "article:compania-electorala-post-realitate-de-la-budapesta",
-      "label": "The Post-Reality Electoral Campaign from Budapest",
+      "label": "Compania electorală post-realitate de la Budapesta",
       "type": "article",
       "color": "#3a86ff",
       "size": 5.8,
@@ -997,7 +997,7 @@
     },
     {
       "id": "article:coruptia-adevarata-problema",
-      "label": "Corruption, the Real Problem",
+      "label": "Corupția, adevărata problemă",
       "type": "article",
       "color": "#f5a623",
       "size": 6.4,
@@ -1142,7 +1142,7 @@
     },
     {
       "id": "article:cum-functioneaza-o-retea-ruseasca-de-propaganda-nume-ierarhii-si-organizare",
-      "label": "How a Russian Propaganda Network Operates – Names, Hierarchies, and Organization",
+      "label": "Cum funcţionează o rețea rusească de propagandă – nume, ierarhii și organizare",
       "type": "article",
       "color": "#e84855",
       "size": 4.6,
@@ -1183,7 +1183,7 @@
     },
     {
       "id": "article:cum-il-infunda-voineag-pe-predoiu-l-a-ales-predoiu-personal-peste-capul-comisiei-asa-cum-ne-informa-ioana-dogioiu",
-      "label": "How Voineag incriminates Predoiu - Did Predoiu personally choose him over the commission's recommendation, as Ioana Dogioiu reported?",
+      "label": "Cum îl înfundă Voineag pe Predoiu. L-a ales Predoiu personal peste capul comisiei, așa cum ne informa Ioana Dogioiu?",
       "type": "article",
       "color": "#f5a623",
       "size": 5.8,
@@ -1220,7 +1220,7 @@
     },
     {
       "id": "article:cum-sa-nu-schimbi-un-regim-politic",
-      "label": "Cum să nu schimbi un regim politic (How Not to Change a Political Regime)",
+      "label": "Cum să nu schimbi un regim politic",
       "type": "article",
       "color": "#44bd6e",
       "size": 5.2,
@@ -1348,7 +1348,7 @@
     },
     {
       "id": "article:de-ce-e-simion-sclavul-lui-trump-cand-alti-suveranisti-europeni-nu-sunt",
-      "label": "Why is Simion Trump's slave when other European sovereignists are not?",
+      "label": "De ce e Simion sclavul lui Trump când alți suveraniști europeni nu sunt?",
       "type": "article",
       "color": "#f5a623",
       "size": 5.8,
@@ -1464,7 +1464,7 @@
     },
     {
       "id": "article:disperarea-iranului-va-conduce-spre-o-noua-era-a-terorismului-global",
-      "label": "Will Iran's Desperation Lead to a New Era of Global Terrorism?",
+      "label": "Disperarea Iranului va conduce spre o nouă eră a terorismului global?",
       "type": "article",
       "color": "#17c3b2",
       "size": 4.6,
@@ -1712,7 +1712,7 @@
     },
     {
       "id": "article:este-oare-prea-tarziu-ca-sa-ne-luam-tara-inapoi",
-      "label": "Is It Too Late to Take Our Country Back?",
+      "label": "Este oare prea târziu ca să ne luăm țara înapoi?",
       "type": "article",
       "color": "#f5a623",
       "size": 8.8,
@@ -1801,7 +1801,7 @@
     },
     {
       "id": "article:eternul-predator-sau-manda-pe-tanda-la-sri-despre-salvarea-uselismului-securitatii-nationale",
-      "label": "The Eternal 'Predator' or Manda on Tanda at SRI: On Saving the 'USL-ism' of National Security",
+      "label": "Eternul ”Predator” sau Manda pe Tanda la SRI. Despre salvarea uselismului securității naționale",
       "type": "article",
       "color": "#f5a623",
       "size": 5.2,
@@ -1836,7 +1836,7 @@
     },
     {
       "id": "article:eu-inc-cand-europa-ne-forteaza-sa-evoluam",
-      "label": "EU Inc. - When Europe Forces Us to Evolve",
+      "label": "EU Inc.- Când Europa ne forțează să evoluăm",
       "type": "article",
       "color": "#3a86ff",
       "size": 4.6,
@@ -2047,7 +2047,7 @@
     },
     {
       "id": "article:fantoma-euro-asiei-bantuie-rusia-si-asta-explica-marea-strategie-a-kremlinului",
-      "label": "The Ghost of Eurasia Haunts Russia and Explains the Kremlin's Grand Strategy",
+      "label": "Fantoma Euro-Asiei bântuie Rusia și asta explică marea strategie a Kremlinului",
       "type": "article",
       "color": "#17c3b2",
       "size": 5.8,
@@ -2131,7 +2131,7 @@
     },
     {
       "id": "article:foc-la-rasarit-iranul-si-noul-razboi-din-orientul-mijlociu",
-      "label": "Fire in the East: Iran and the New Middle East War",
+      "label": "Foc la răsărit: Iranul și noul război din Orientul Mijlociu",
       "type": "article",
       "color": "#17c3b2",
       "size": 4.6,
@@ -2451,7 +2451,7 @@
     },
     {
       "id": "article:make-europe-great-again-cum-reuseste-trump-sa-federalizeze-ue-si-ce-avem-de-facut",
-      "label": "Make Europe Great Again – How Trump Succeeds in Federalizing the EU and What We Must Do",
+      "label": "Make Europe Great Again – cum reușește Trump să federalizeze UE și ce avem de făcut",
       "type": "article",
       "color": "#3a86ff",
       "size": 8.2,
@@ -2596,7 +2596,7 @@
     },
     {
       "id": "article:modelul-cultural-european-si-noua-ordine-mondiala",
-      "label": "The European Cultural Model and the New World Order",
+      "label": "Modelul cultural european și noua ordine mondială",
       "type": "article",
       "color": "#3a86ff",
       "size": 7.0,
@@ -2798,7 +2798,7 @@
     },
     {
       "id": "article:nu-este-vorba-despre-ucraina-ci-despre-ordinea-mondiala-axa-autocratilor-pregateste-distopia-digitala-2-0",
-      "label": "\"It's not about Ukraine, but about the world order\" – The Axis of Autocrats prepares Digital Dystopia 2.0",
+      "label": "„Nu este vorba despre Ucraina, ci despre ordinea mondială” – Axa Autocraților pregătește distopia digitală 2.0",
       "type": "article",
       "color": "#17c3b2",
       "size": 6.4,
@@ -2838,7 +2838,7 @@
     },
     {
       "id": "article:o-privire-spre-alegerile-din-ungaria",
-      "label": "A Look Towards the Hungarian Elections",
+      "label": "O privire spre alegerile din Ungaria",
       "type": "article",
       "color": "#3a86ff",
       "size": 7.0,
@@ -3022,7 +3022,7 @@
     },
     {
       "id": "article:patru-intrebari-pentru-pesedisti-si-nu-doar-pentru-ei",
-      "label": "Four Questions for PSD Members and Not Only for Them",
+      "label": "Patru întrebări pentru pesediști și nu doar pentru ei",
       "type": "article",
       "color": "#f5a623",
       "size": 5.8,
@@ -3054,7 +3054,7 @@
     },
     {
       "id": "article:pnl-s-a-comportat-ca-un-partid-socialist-sub-guvernarea-nicu-marcel-poate-redeveni-liberal-prin-userizare",
-      "label": "PNL s-a comportat ca un partid socialist sub guvernarea Nicu-Marcel. Poate redeveni liberal prin 'userizare'",
+      "label": "PNL s-a comportat ca un partid socialist sub guvernarea Nicu-Marcel. Poate redeveni liberal prin ”userizare”",
       "type": "article",
       "color": "#f5a623",
       "size": 5.2,
@@ -3086,7 +3086,7 @@
     },
     {
       "id": "article:politica-externa-demodata-si-kitsch-a-romaniei-in-vizita-la-washington",
-      "label": "Romania's Outdated and Kitsch Foreign Policy Visits Washington",
+      "label": "Politica externă demodata și kitsch a României în vizită la Washington",
       "type": "article",
       "color": "#f5a623",
       "size": 7.6,
@@ -3127,7 +3127,7 @@
     },
     {
       "id": "article:presedintele-bulgariei-a-demisionat-pentru-a-intra-in-arena-politicii-murdare-ce-urmeaza-in-tara-vecina",
-      "label": "Bulgaria's President Resigned to Enter 'Dirty' Politics Arena. What's Next for the Neighboring Country?",
+      "label": "Președintele Bulgariei a demisionat pentru a intra în arena politicii „murdare”. Ce urmează în țara vecină?",
       "type": "article",
       "color": "#3a86ff",
       "size": 5.2,
@@ -3159,7 +3159,7 @@
     },
     {
       "id": "article:problema-coalitiei-este-chiar-coalitia",
-      "label": "Problema Coaliției este chiar \"COALIȚIA\"",
+      "label": "Problema Coaliției este chiar ”COALIȚIA”",
       "type": "article",
       "color": "#f5a623",
       "size": 6.4,
@@ -3229,7 +3229,7 @@
     },
     {
       "id": "article:protestele-din-iran-exista-speranta-unui-stat-civil-si-o-intoarcere-la-democratie",
-      "label": "Protests in Iran – Hope for a Civil State and Return to Democracy",
+      "label": "Protestele din Iran – există speranța unui stat civil și a întoarcerii la democrație",
       "type": "article",
       "color": "#17c3b2",
       "size": 5.8,
@@ -3331,7 +3331,7 @@
     },
     {
       "id": "article:raul-este-absolut-binele-este-relativ-in-politica-romaneasca",
-      "label": "Evil is absolute, good is relative in Romanian politics",
+      "label": "Răul este absolut, binele este relativ în politica românească",
       "type": "article",
       "color": "#f5a623",
       "size": 5.2,
@@ -3620,7 +3620,7 @@
     },
     {
       "id": "article:solutia-imorala-ce-a-fost-si-ce-nu-mai-e",
-      "label": "\"The Immoral Solution\": What It Was and What It No Longer Is",
+      "label": "„Soluția imorală”: ce a fost și ce nu mai e",
       "type": "article",
       "color": "#f5a623",
       "size": 5.8,
@@ -3658,7 +3658,7 @@
     },
     {
       "id": "article:subventia-pentru-buruieni-de-ce-plateste-romania-milioane-pe-pamant-gol-noi-preferam-sa-tratam-nu-sa-prevenim",
-      "label": "Subsidy for weeds: why does Romania pay millions for bare land? We prefer to treat, not to prevent",
+      "label": "Subvenția pentru buruieni: de ce plătește România milioane pe pământ gol? Noi preferăm să tratăm, nu să prevenim",
       "type": "article",
       "color": "#ff7b3a",
       "size": 4.6,
@@ -3769,7 +3769,7 @@
     },
     {
       "id": "article:suveranitate-pe-datorie-cum-a-platit-romania-datoria-externa-si-ce-a-pierdut-in-schimb-1978-1989",
-      "label": "Sovereignty on Debt: How Romania Paid Off Its External Debt and What It Lost in Return (1978–1989)",
+      "label": "Suveranitate pe datorie: cum a plătit România datoria externă și ce a pierdut în schimb (1978–1989)",
       "type": "article",
       "color": "#b07cd8",
       "size": 4.6,
@@ -3833,7 +3833,7 @@
     },
     {
       "id": "article:teoria-haosului-de-la-bucuresti-la-washington-via-teheran",
-      "label": "Chaos Theory, from Bucharest to Washington, via Tehran",
+      "label": "Teoria haosului, de la București la Washington, via Teheran",
       "type": "article",
       "color": "#17c3b2",
       "size": 5.8,
@@ -3877,7 +3877,7 @@
     },
     {
       "id": "article:tigrul-de-hartie-din-jungla-unei-lumi-multipolare",
-      "label": "The Paper Tiger in the Jungle of a Multipolar World",
+      "label": "Tigrul de hârtie din jungla unei lumi multipolare",
       "type": "article",
       "color": "#17c3b2",
       "size": 8.2,
@@ -3960,7 +3960,7 @@
     },
     {
       "id": "article:trump-tocmai-a-demolat-ultimele-vestigii-ale-vechii-ordini-mondiale-e-timpul-pentru-o-europa-unita",
-      "label": "Trump Has Just Demolished the Last Vestiges of the Old World Order. It's Time for a United Europe",
+      "label": "Trump tocmai a demolat ultimele vestigii ale vechii ordini mondiale. E timpul pentru o Europă unită",
       "type": "article",
       "color": "#3a86ff",
       "size": 8.2,
@@ -3997,7 +3997,7 @@
     },
     {
       "id": "article:ucraina-supravietuire-prin-europenizare",
-      "label": "Ucraina – supraviețuire prin europenizare",
+      "label": "Ucraina  – supraviețuire prin europenizare",
       "type": "article",
       "color": "#e84855",
       "size": 5.2,
@@ -4052,442 +4052,442 @@
     },
     {
       "id": "concept:democratic backsliding",
-      "label": "Democratic Backsliding In Eastern Europe",
+      "label": "Regres democratic",
       "type": "concept",
       "color": "#f5a623",
-      "size": 36,
+      "size": 27,
       "mentions": 56
     },
     {
       "id": "concept:sovereignism",
-      "label": "Sovereignism",
+      "label": "Suveranism",
       "type": "concept",
       "color": "#f5a623",
-      "size": 13.5,
+      "size": 9.5,
       "mentions": 3
     },
     {
       "id": "concept:civil society resilience",
-      "label": "Civil Society Resilience",
+      "label": "Reziliența societății civile",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:democratic accountability",
-      "label": "Institutional Accountability",
+      "label": "Responsabilitate democratică",
       "type": "concept",
       "color": "#f5a623",
-      "size": 28.5,
+      "size": 18.5,
       "mentions": 9
     },
     {
       "id": "concept:european strategic autonomy",
-      "label": "European Strategic Sovereignty",
+      "label": "Autonomia strategică europeană",
       "type": "concept",
       "color": "#3a86ff",
-      "size": 36,
+      "size": 24.5,
       "mentions": 13
     },
     {
       "id": "concept:global multipolar order",
-      "label": "Small State Diplomacy In Great Power Competition",
+      "label": "Ordinea mondială multipolară",
       "type": "concept",
       "color": "#17c3b2",
-      "size": 36.0,
+      "size": 23.0,
       "mentions": 12
     },
     {
       "id": "concept:european security architecture",
-      "label": "European Security Architecture",
+      "label": "Arhitectura securității europene",
       "type": "concept",
       "color": "#17c3b2",
-      "size": 36,
+      "size": 27,
       "mentions": 27
     },
     {
       "id": "concept:post-american world order",
-      "label": "Post-American World Order",
+      "label": "Ordinea mondială post-americană",
       "type": "concept",
       "color": "#3a86ff",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:transatlantic relations",
-      "label": "Transatlantic Alliance Fragmentation",
+      "label": "Relații transatlantice",
       "type": "concept",
       "color": "#f5a623",
-      "size": 36,
+      "size": 24.5,
       "mentions": 13
     },
     {
       "id": "concept:post-wwii international order collapse",
-      "label": "Post-Wwii International Order Collapse",
+      "label": "Prăbușirea ordinii internaționale postbelice",
       "type": "concept",
       "color": "#17c3b2",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:european integration",
-      "label": "Eu Political Integration",
+      "label": "Integrarea europeană",
       "type": "concept",
       "color": "#3a86ff",
-      "size": 31.0,
+      "size": 20.0,
       "mentions": 10
     },
     {
       "id": "concept:budget deficit management",
-      "label": "Budget Deficit Management",
+      "label": "Gestionarea deficitului bugetar",
       "type": "concept",
       "color": "#f5a623",
-      "size": 13.5,
+      "size": 9.5,
       "mentions": 3
     },
     {
       "id": "concept:education reform",
-      "label": "Education Reform",
+      "label": "Reforma educației",
       "type": "concept",
       "color": "#f5a623",
-      "size": 13.5,
+      "size": 9.5,
       "mentions": 3
     },
     {
       "id": "concept:political communication failures",
-      "label": "Political Communication Failures",
+      "label": "Eșecuri de comunicare politică",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:political polarization",
-      "label": "Political Polarization",
+      "label": "Polarizare politică",
       "type": "concept",
       "color": "#f5a623",
-      "size": 13.5,
+      "size": 9.5,
       "mentions": 3
     },
     {
       "id": "concept:judicial independence",
-      "label": "Judicial Independence",
+      "label": "Independența justiției",
       "type": "concept",
       "color": "#f5a623",
-      "size": 26.0,
+      "size": 17.0,
       "mentions": 8
     },
     {
       "id": "concept:intelligence service reform",
-      "label": "Intelligence Service Reform",
+      "label": "Reforma serviciilor secrete",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:rule of law",
-      "label": "Rule Of Law",
+      "label": "Statul de drept",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:arctic geopolitics",
-      "label": "Arctic Geopolitics",
+      "label": "Geopolitica arctică",
       "type": "concept",
       "color": "#17c3b2",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:separation of powers",
-      "label": "Separation Of Powers",
+      "label": "Separarea puterilor în stat",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:russian influence operations",
-      "label": "Russian Influence Operations",
+      "label": "Operațiuni de influență rusești",
       "type": "concept",
       "color": "#3a86ff",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:fiscal austerity measures",
-      "label": "Fiscal Austerity Measures",
+      "label": "Măsuri de austeritate fiscală",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:coalition politics constraints",
-      "label": "Coalition Politics Constraints",
+      "label": "Constrângerile politicii de coaliție",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:coalition governance",
-      "label": "Coalition Governance",
+      "label": "Guvernarea de coaliție",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:political capture of prosecution",
-      "label": "Political Capture Of Prosecution",
+      "label": "Capturarea politică a parchetelor",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:political corruption",
-      "label": "Political Corruption",
+      "label": "Corupție politică",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:democratic resilience",
-      "label": "Democratic Resilience",
+      "label": "Reziliența democratică",
       "type": "concept",
       "color": "#e84855",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:rules-based international order",
-      "label": "Rules-Based International Order",
+      "label": "Ordinea internațională bazată pe reguli",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:administrative reform",
-      "label": "Administrative Reform",
+      "label": "Reformă administrativă",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:constitutional court manipulation",
-      "label": "Constitutional Court Manipulation",
+      "label": "Manipularea Curții Constituționale",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:political clientelism",
-      "label": "Political Clientelism",
+      "label": "Clientelism politic",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:democratic governance reform",
-      "label": "Democratic Governance Reform",
+      "label": "Reforma guvernanței democratice",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:post-communist institutional capture",
-      "label": "Post-Communist Institutional Capture",
+      "label": "Captura instituțională post-comunistă",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:nato obsolescence",
-      "label": "Nato Obsolescence",
+      "label": "Obsolescența NATO",
       "type": "concept",
       "color": "#44bd6e",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:european federalization",
-      "label": "European Federalization",
+      "label": "Federalizarea europeană",
       "type": "concept",
       "color": "#44bd6e",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:european security autonomy",
-      "label": "European Security Autonomy",
+      "label": "Autonomia de securitate europeană",
       "type": "concept",
       "color": "#44bd6e",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:transatlantic relations crisis",
-      "label": "Transatlantic Relations Crisis",
+      "label": "Criza relațiilor transatlantice",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:institutional capture",
-      "label": "Institutional Capture",
+      "label": "Captura instituțională",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:post-communist institutional corruption",
-      "label": "Post-Communist Institutional Corruption",
+      "label": "Corupția instituțională post-comunistă",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:institutional erosion",
-      "label": "Institutional Erosion",
+      "label": "Erodarea instituțiilor",
       "type": "concept",
       "color": "#44bd6e",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:diplomatic irrelevance",
-      "label": "Diplomatic Irrelevance",
+      "label": "Irelevanta diplomatică",
       "type": "concept",
       "color": "#3a86ff",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:eu institutional reform",
-      "label": "Eu Institutional Reform",
+      "label": "Reforma instituțională UE",
       "type": "concept",
       "color": "#3a86ff",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:transatlantic relations decline",
-      "label": "Transatlantic Relations Decline",
+      "label": "Declinul relațiilor transatlantice",
       "type": "concept",
       "color": "#3a86ff",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:coalition politics and moral compromise",
-      "label": "Coalition Politics And Moral Compromise",
+      "label": "Politica coalițiilor și compromisul moral",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:russian expansionism",
-      "label": "Russian Expansionism",
+      "label": "Expansionismul rusesc",
       "type": "concept",
       "color": "#17c3b2",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:executive-legislative balance",
-      "label": "Executive-Legislative Balance",
+      "label": "Echilibrul executiv-legislativ",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:coalition politics",
-      "label": "Coalition Politics",
+      "label": "Politica coalițiilor",
       "type": "concept",
       "color": "#f5a623",
-      "size": 13.5,
+      "size": 9.5,
       "mentions": 3
     },
     {
       "id": "concept:energy independence",
-      "label": "Energy Independence",
+      "label": "Independența energetică",
       "type": "concept",
       "color": "#3a86ff",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:spheres of influence",
-      "label": "Spheres Of Influence",
+      "label": "Sfere de influență",
       "type": "concept",
       "color": "#17c3b2",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:energy geopolitics",
-      "label": "Energy Geopolitics",
+      "label": "Geopolitica energiei",
       "type": "concept",
       "color": "#17c3b2",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:illiberal democracy",
-      "label": "Illiberal Democracy",
+      "label": "Democrație iliberală",
       "type": "concept",
       "color": "#17c3b2",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:vat collection gap",
-      "label": "Vat Collection Gap",
+      "label": "Deficitul de colectare TVA",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:populism and sovereignty movements",
-      "label": "Populism And Sovereignty Movements",
+      "label": "Populism și mișcări suveraniste",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:coalition governance dysfunction",
-      "label": "Coalition Governance Dysfunction",
+      "label": "Disfuncționalitatea guvernării de coaliție",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     },
     {
       "id": "concept:transatlantic relationship erosion",
-      "label": "Transatlantic Relationship Erosion",
+      "label": "Erodarea relației transatlantice",
       "type": "concept",
       "color": "#f5a623",
-      "size": 11.0,
+      "size": 8.0,
       "mentions": 2
     }
   ],

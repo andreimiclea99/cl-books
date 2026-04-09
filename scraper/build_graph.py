@@ -176,6 +176,67 @@ def build_graph(extractions: list) -> dict:
             "color": color,
         })
 
+    # --- Romanian concept labels ---
+    CONCEPT_RO = {
+        "democratic backsliding": "Regres democratic",
+        "european security architecture": "Arhitectura securității europene",
+        "european strategic autonomy": "Autonomia strategică europeană",
+        "transatlantic relations": "Relații transatlantice",
+        "judicial independence": "Independența justiției",
+        "democratic accountability": "Responsabilitate democratică",
+        "global multipolar order": "Ordinea mondială multipolară",
+        "european integration": "Integrarea europeană",
+        "coalition politics": "Politica coalițiilor",
+        "education reform": "Reforma educației",
+        "sovereignism": "Suveranism",
+        "political polarization": "Polarizare politică",
+        "budget deficit management": "Gestionarea deficitului bugetar",
+        "small state geopolitics": "Geopolitica statelor mici",
+        "civil society resilience": "Reziliența societății civile",
+        "political communication failures": "Eșecuri de comunicare politică",
+        "intelligence service reform": "Reforma serviciilor secrete",
+        "rule of law": "Statul de drept",
+        "arctic geopolitics": "Geopolitica arctică",
+        "energy geopolitics": "Geopolitica energiei",
+        "energy independence": "Independența energetică",
+        "spheres of influence": "Sfere de influență",
+        "administrative reform": "Reformă administrativă",
+        "political corruption": "Corupție politică",
+        "vat collection gap": "Deficitul de colectare TVA",
+        "democratic resilience": "Reziliența democratică",
+        "institutional erosion": "Erodarea instituțiilor",
+        "nato obsolescence": "Obsolescența NATO",
+        "executive-legislative balance": "Echilibrul executiv-legislativ",
+        "coalition governance dysfunction": "Disfuncționalitatea guvernării de coaliție",
+        "coalition governance": "Guvernarea de coaliție",
+        "eu institutional reform": "Reforma instituțională UE",
+        "fiscal austerity measures": "Măsuri de austeritate fiscală",
+        "coalition politics constraints": "Constrângerile politicii de coaliție",
+        "russian propaganda": "Propaganda rusă",
+        "russian expansionism": "Expansionismul rusesc",
+        "separation of powers": "Separarea puterilor în stat",
+        "russian influence operations": "Operațiuni de influență rusești",
+        "political capture of prosecution": "Capturarea politică a parchetelor",
+        "rules-based international order": "Ordinea internațională bazată pe reguli",
+        "constitutional court manipulation": "Manipularea Curții Constituționale",
+        "political clientelism": "Clientelism politic",
+        "democratic governance reform": "Reforma guvernanței democratice",
+        "post-communist institutional capture": "Captura instituțională post-comunistă",
+        "european federalization": "Federalizarea europeană",
+        "european security autonomy": "Autonomia de securitate europeană",
+        "transatlantic relations crisis": "Criza relațiilor transatlantice",
+        "institutional capture": "Captura instituțională",
+        "post-communist institutional corruption": "Corupția instituțională post-comunistă",
+        "diplomatic irrelevance": "Irelevanta diplomatică",
+        "transatlantic relations decline": "Declinul relațiilor transatlantice",
+        "coalition politics and moral compromise": "Politica coalițiilor și compromisul moral",
+        "illiberal democracy": "Democrație iliberală",
+        "populism and sovereignty movements": "Populism și mișcări suveraniste",
+        "transatlantic relationship erosion": "Erodarea relației transatlantice",
+        "post-american world order": "Ordinea mondială post-americană",
+        "post-wwii international order collapse": "Prăbușirea ordinii internaționale postbelice",
+    }
+
     # --- Concept nodes ---
     for norm, articles in popular_concepts.items():
         node_id = f"concept:{norm}"
@@ -191,11 +252,11 @@ def build_graph(extractions: list) -> dict:
         dominant_cat = cat_counts.most_common(1)[0][0] if cat_counts else "Others"
         color = CATEGORY_COLORS.get(dominant_cat, CATEGORY_COLORS["Others"])
 
-        size = 6 + min(len(articles) * 2.5, 30)
+        size = 5 + min(len(articles) * 1.5, 22)
 
         nodes.append({
             "id": node_id,
-            "label": raw.title(),
+            "label": CONCEPT_RO.get(norm, raw.title()),
             "type": "concept",
             "color": color,
             "size": round(size, 1),
@@ -238,7 +299,7 @@ def build_graph(extractions: list) -> dict:
         if node["type"] == "category":
             cat = node["label"]
             count = cat_counts.get(cat, 0)
-            node["size"] = 40 + count * 1.5
+            node["size"] = 30 + count * 1
             node["articleCount"] = count
 
     # --- Update article node sizes based on degree ---
