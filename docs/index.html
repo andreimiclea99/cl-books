@@ -697,20 +697,24 @@
   // ── Build graphology graph ──
   const graph = new graphology.Graph();
 
+  // Scale down node sizes for a sparser, label-forward look
+  const sizeScale = { category: 0.35, concept: 0.45, article: 0.5 };
+
   graphData.nodes.forEach((node, i) => {
-    let x = (Math.random() - 0.5) * 400;
-    let y = (Math.random() - 0.5) * 400;
+    let x = (Math.random() - 0.5) * 600;
+    let y = (Math.random() - 0.5) * 600;
 
     if (node.type === 'category') {
-      const catIdx = meta.categories.indexOf(node.label);
+      const catIdx = meta.categories.indexOf(node.catKey || node.label);
       const angle = (catIdx / meta.categories.length) * 2 * Math.PI;
-      x = Math.cos(angle) * 180;
-      y = Math.sin(angle) * 180;
+      x = Math.cos(angle) * 300;
+      y = Math.sin(angle) * 300;
     }
 
+    const scale = sizeScale[node.type] || 0.5;
     graph.addNode(node.id, {
       x, y,
-      size: node.size,
+      size: Math.max(2, node.size * scale),
       color: node.color,
       label: node.label,
       _type: node.type,
@@ -722,11 +726,10 @@
     if (!graph.hasNode(edge.source) || !graph.hasNode(edge.target)) return;
     try {
       graph.addEdge(edge.source, edge.target, {
-        size: Math.max(0.3, (edge.weight || 0.5) * 0.5),
-        color: edge.color ? (edge.color + '28') : 'rgba(100,110,130,0.10)',
-        type: 'curve',
+        size: 0.3,
+        color: 'rgba(180,185,200,0.08)',
         _type: edge.type,
-        _baseColor: edge.color || '#556677',
+        _baseColor: edge.color || '#8890a0',
       });
     } catch(e) { /* skip duplicates */ }
   });
@@ -736,16 +739,17 @@
   // ── Layout ──
   const sensibleSettings = forceAtlas2.inferSettings(graph);
   forceAtlas2.assign(graph, {
-    iterations: 800,
+    iterations: 1000,
     settings: {
       ...sensibleSettings,
-      gravity: 0.02,
-      scalingRatio: 40,
+      gravity: 0.005,
+      scalingRatio: 80,
       barnesHutOptimize: true,
-      barnesHutTheta: 0.4,
-      slowDown: 5,
+      barnesHutTheta: 0.3,
+      slowDown: 8,
       strongGravityMode: false,
       adjustSizes: true,
+      outboundAttractionDistribution: true,
     },
   });
 
@@ -755,18 +759,17 @@
   // ── Sigma renderer ──
   const renderer = new Sigma(graph, container, {
     renderLabels: true,
-    labelSize: 12,
-    labelColor: { color: '#a0a5b0' },
-    labelRenderedSizeThreshold: 6,
-    defaultEdgeColor: 'rgba(100,110,130,0.12)',
-    defaultEdgeType: 'curve',
+    labelSize: 11,
+    labelColor: { color: '#999da8' },
+    labelRenderedSizeThreshold: 1,
+    defaultEdgeColor: 'rgba(180,185,200,0.08)',
     defaultNodeColor: '#555',
-    minCameraRatio: 0.03,
-    maxCameraRatio: 10,
+    minCameraRatio: 0.02,
+    maxCameraRatio: 12,
     labelFont: '"IBM Plex Sans", sans-serif',
-    stagePadding: 60,
-    labelDensity: 0.08,
-    labelGridCellSize: 150,
+    stagePadding: 80,
+    labelDensity: 0.6,
+    labelGridCellSize: 80,
   });
 
   loadingFill.style.width = '100%';
@@ -784,6 +787,13 @@
   let selectedNode = null;
   let searchQuery = '';
   const hiddenCategories = new Set();
+
+  function zoomToNode(nodeId, ratio) {
+    const dd = renderer.getNodeDisplayData(nodeId);
+    if (dd) {
+      renderer.getCamera().animate({ x: dd.x, y: dd.y, ratio: ratio || 0.2 }, { duration: 400 });
+    }
+  }
 
   function getNeighbors(nodeId) {
     const set = new Set([nodeId]);
@@ -846,8 +856,7 @@
         selectedNode = nodeId;
         showDetail(nodeId);
         applyFilters();
-        const pos = graph.getNodeAttributes(nodeId);
-        renderer.getCamera().animate({ x: pos.x, y: pos.y, ratio: 0.4 }, { duration: 400 });
+        zoomToNode(nodeId);
       }
     });
     conceptRanksEl.appendChild(row);
@@ -873,8 +882,7 @@
         selectedNode = nodeId;
         showDetail(nodeId);
         applyFilters();
-        const pos = graph.getNodeAttributes(nodeId);
-        renderer.getCamera().animate({ x: pos.x, y: pos.y, ratio: 0.35 }, { duration: 400 });
+        zoomToNode(nodeId);
       }
     });
     recentEl.appendChild(item);
@@ -938,7 +946,7 @@
 
       if (highlight) {
         if (highlight.has(source) && highlight.has(target)) {
-          return { ...data, color: baseColor + 'AA', size: Math.max(data.size, 1.2) };
+          return { ...data, color: 'rgba(200,210,230,0.25)', size: 0.6 };
         }
         return { ...data, hidden: true };
       }
@@ -946,9 +954,9 @@
       if (hoveredNode) {
         const hNeighbors = getNeighbors(hoveredNode);
         if (hNeighbors.has(source) && hNeighbors.has(target)) {
-          return { ...data, color: baseColor + 'CC', size: Math.max(data.size, 1.5) };
+          return { ...data, color: 'rgba(200,210,230,0.3)', size: 0.6 };
         }
-        return { ...data, color: 'rgba(40,42,50,0.15)' };
+        return { ...data, color: 'rgba(40,42,50,0.04)' };
       }
 
       return data;
@@ -1110,6 +1118,7 @@
     searchTimeout = setTimeout(() => {
       searchQuery = searchInput.value.toLowerCase().trim();
       if (searchQuery) {
+        // Find best matching node
         let bestNode = null;
         let bestScore = Infinity;
         graph.forEachNode((node, attrs) => {
@@ -1121,14 +1130,26 @@
               bestNode = node;
             }
           }
+          // Also search people/countries for articles
+          if (!bestNode && attrs._type === 'article') {
+            const d = attrs._data;
+            if ((d.people || []).some(p => p.toLowerCase().includes(searchQuery))
+              || (d.countries || []).some(c => c.toLowerCase().includes(searchQuery))) {
+              bestNode = bestNode || node;
+            }
+          }
         });
         if (bestNode) {
-          const pos = graph.getNodeAttributes(bestNode);
-          renderer.getCamera().animate({ x: pos.x, y: pos.y, ratio: 0.3 }, { duration: 400 });
+          selectedNode = bestNode;
+          showDetail(bestNode);
+          zoomToNode(bestNode, 0.15);
         }
+      } else {
+        selectedNode = null;
+        detailPanel.classList.remove('open');
       }
       applyFilters();
-    }, 200);
+    }, 250);
   });
 
   // ── Keyboard ──
